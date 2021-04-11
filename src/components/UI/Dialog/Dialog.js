@@ -19,14 +19,22 @@ class Dialog extends Component {
 
         return (
             open ? ReactDOM.createPortal(
-                <div className={`${classes.wrapper} ${className ? className : ''}`}>
+                <div id="modal-dialog-wrapper" className={`${classes.wrapper} ${className ? className : ''}`}>
                     <div
                         className={classes.dialog}
                         tabIndex={open ? 0 : undefined}
+                        aria-labelledby="dialog-title"
                     >
                         <div className={classes.header}>
-                            <h3 className={classes.title}>{title}</h3>
-                            <Button iconClass="t-icon t-close" onClick={close}/>
+                            <h3
+                                id="dialog-title"
+                                className={classes.title}>
+                                {title}
+                            </h3>
+                            <Button
+                                iconClass="db-icon db-close"
+                                onClick={close} aria={{label: "Close dialog"}}
+                            />
                         </div>
                         <div className={classes.body}>
                             {children}

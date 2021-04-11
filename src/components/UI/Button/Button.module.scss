@@ -69,5 +69,13 @@
 }
 
 .flat {
-   color: red;
+    border-color: transparent;
+    background-color: transparent;
+
+    &:hover,
+    &:active {
+        color: $t-btn-primary-active-hover-text-color;
+        background-color: $t-btn-primary-active-hover-bg-color;
+        border-color: $t-btn-primary-active-hover-border-color;
+    }
 }
