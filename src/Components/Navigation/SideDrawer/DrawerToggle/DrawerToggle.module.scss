@@ -1,0 +1,26 @@
+@import "../../../../theme/sass/abstract/variables";
+
+.DrawerToggle {
+
+    button {
+        width: 4rem;
+        height: 4rem;
+        min-width: 4rem;
+        color: $db-nav-item-color;
+
+        &:active,
+        &:hover {
+            border-color: $db-nav-item-color;
+            background-color: $db-nav-item-color;
+            color: $white;
+        }
+
+        &:focus {
+            box-shadow: 0 0 2px $db-nav-item-color;
+        }
+    }
+
+    i {
+        font-size: 3.2rem;
+    }
+}

@@ -1,0 +1,32 @@
+.SocialBar {
+    display: flex;
+    justify-content: flex-end;
+
+    a {
+        text-decoration: none;
+        width: 4rem;
+        height: 4rem;
+        min-height: 4rem;
+        min-width: 4rem;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        border-radius: 50%;
+
+        &:not(:last-of-type) {
+            margin-right: 1rem;
+        }
+    }
+
+    .facebook {
+        background-image: url("../../theme/resources/img/facebook.svg");
+    }
+
+    .instagram{
+        background-image: url("../../theme/resources/img/instagram.svg");
+    }
+
+    .twitter {
+        background-image: url("../../theme/resources/img/twitter.svg");
+    }
+}

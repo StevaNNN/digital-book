@@ -1,0 +1,40 @@
+@import "../../../theme/sass/abstract/variables";
+@import "../../../theme/sass/abstract/functions";
+
+.SideDrawer {
+    position: absolute;
+    max-width: 30%;
+    width: 30rem;
+    height: 100%;
+    right: 0;
+    top: 0;
+    z-index: 200;
+    background-color: $white;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    transition: transition(transform);
+
+    ul {
+        display: flex;
+        flex-direction: column;
+
+        a {
+            justify-content: flex-end;
+        }
+    }
+}
+
+.Open {
+    transform: translateX(0);
+}
+
+.Close {
+    transform: translateX(100%);
+}
+
+.DrawerToggler {
+    display: flex;
+    justify-content: flex-end;
+}
+
