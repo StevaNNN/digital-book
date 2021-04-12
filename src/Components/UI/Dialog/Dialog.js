@@ -5,6 +5,11 @@ import Button from "../Button/Button";
 
 class Dialog extends Component {
 
+    shouldComponentUpdate(nextProps, nextState) {
+        // we are only re-rendering this component if props SHOWN or CHILDREN are not the same between current and next props
+        return nextProps.open !== this.props.open || nextProps.children !== this.props.children;
+    }
+
     render() {
 
         const {

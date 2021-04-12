@@ -30,7 +30,7 @@ class Layout extends React.Component {
                     backDropClicked={this.toggleBackdrop}
                     onCloseSideBarClick={this.toggleBackdrop}
                 />
-                <main className={classes.main}>
+                <main className={classes.Main}>
                     {this.props.children}
                 </main>
             </>

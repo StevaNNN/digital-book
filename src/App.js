@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import Layout from "./hoc/Layout/Layout";
+import Layout from "./Hoc/Layout/Layout";
 import classes from './App.module.scss';
-import Intro from "./containers/Intro/Intro";
-import './theme/main.scss';
+import Intro from "./Containers/Intro/Intro";
+import './Theme/main.scss';
 
 class App extends Component {
 
@@ -11,6 +11,9 @@ class App extends Component {
         return (
             <div className={classes.app}>
                 <Layout>
+                    <Intro/>
+                    <Intro/>
+                    <Intro/>
                     <Intro/>
                 </Layout>
             </div>

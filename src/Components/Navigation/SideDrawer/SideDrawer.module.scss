@@ -2,7 +2,7 @@
 @import "../../../theme/sass/abstract/functions";
 
 .SideDrawer {
-    position: absolute;
+    position: fixed;
     max-width: 30%;
     width: 30rem;
     height: 100%;
@@ -14,6 +14,14 @@
     display: flex;
     flex-direction: column;
     transition: transition(transform);
+
+    @media (max-width: 550px) {
+        min-width: 20rem;
+    }
+
+    nav {
+        margin-bottom: 2rem;
+    }
 
     ul {
         display: flex;
@@ -37,4 +45,3 @@
     display: flex;
     justify-content: flex-end;
 }
-

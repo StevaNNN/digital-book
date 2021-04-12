@@ -1,3 +1,6 @@
+@import "../../Theme/sass/abstract/variables";
+@import "../../Theme/sass/abstract/functions";
+
 .SocialBar {
     display: flex;
     justify-content: flex-end;
@@ -12,21 +15,28 @@
         background-repeat: no-repeat;
         background-size: contain;
         border-radius: 50%;
+        opacity: .8;
+        transition: transition(opacity);
 
         &:not(:last-of-type) {
             margin-right: 1rem;
         }
+
+        &:hover {
+            opacity: 1;
+        }
     }
 
     .facebook {
-        background-image: url("../../theme/resources/img/facebook.svg");
+        background-image: url("../../Theme/resources/img/facebook.svg");
     }
 
     .instagram{
-        background-image: url("../../theme/resources/img/instagram.svg");
+        background-image: url("../../Theme/resources/img/instagram.svg");
+        background-size: 100% 35px;
     }
 
     .twitter {
-        background-image: url("../../theme/resources/img/twitter.svg");
+        background-image: url("../../Theme/resources/img/twitter.svg");
     }
 }

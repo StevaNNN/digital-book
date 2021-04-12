@@ -6,7 +6,7 @@ class Intro extends Component {
     render() {
 
         return(
-            <section className={classes.intro}>Intro section</section>
+            <section className={`db-section ${classes.Intro}`}>Intro section</section>
         )
     }
 }

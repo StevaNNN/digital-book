@@ -1,17 +1,17 @@
 import React from "react";
-import classes from './NavigationItems.module.scss';
 import NavigationItem from './NavigationItem/NavigationItem';
+import classes from './NavigationItems.module.scss';
 
 const navigationItems = props => {
     return(
         <ul className={classes.NavigationItems}>
             {props.sideDrawerToolbar && <>
-                <NavigationItem link="/">Home</NavigationItem>
-                <NavigationItem link="/about" >About</NavigationItem>
+                <NavigationItem tabIndex={props.tabIndexInSideDrawer} link="/">Home</NavigationItem>
+                <NavigationItem tabIndex={props.tabIndexInSideDrawer} link="/about" >About</NavigationItem>
             </>}
-            <NavigationItem link="/trending">Trending</NavigationItem>
-            <NavigationItem link="/top-rated" >TopRated</NavigationItem>
-            <NavigationItem link="/genres" >Genres</NavigationItem>
+            <NavigationItem tabIndex={props.tabIndexInSideDrawer} link="/trending">Trending</NavigationItem>
+            <NavigationItem tabIndex={props.tabIndexInSideDrawer} link="/top-rated" >TopRated</NavigationItem>
+            <NavigationItem tabIndex={props.tabIndexInSideDrawer} link="/genres" >Genres</NavigationItem>
         </ul>
     )
 }
