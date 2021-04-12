@@ -6,8 +6,9 @@
       "author": "Daniel Defoe",
       "description": "Daniel Defoe’s The Life and Strange Surprizing Adventures of Robinson Crusoe of York, Mariner (1719) is considered by many the first English novel. Based on the real-life experiences of the castaway Alexander Selkirk, the book has had a perrenial appeal among readers of all ages-–especially the young adult reading public–-who continue to find inspiration in the inventive resourcefulness of its hero, sole survivor of a shipwreck who is marooned on an uninhabited island.\n\nEspecially poignant, after more than two decades of unbroken solitude, is the affection that Robinson develops for Friday, another survivor fleeing certain death at the hands of enemy tribesmen from the South American continent. (Summary by Denny Sayers)",
       "link": "https://gotobuyPrvaKnjiga.com",
-      "genre" : [ "trending", "fiction", "action & adventure fiction" ],
-      "language" : [ "English" ]
+      "genres" : [ "top-rated", "fiction", "action & adventure fiction" ],
+      "language" : [ "English" ],
+      "thumbnail": "https://placeimg.com/230/260/animals"
     },
     {
       "id": 2,
@@ -15,8 +16,9 @@
       "author": "Sun Tzu",
       "description": "The Art of War is a Chinese military treatise written during the 6th century BC by Sun Tzu. Composed of 13 chapters, each of which is devoted to one aspect of warfare, it has long been praised as the definitive work on military strategies and tactics of its time. The Art of War is one of the oldest and most famous studies of strategy and has had a huge influence on both military planning and beyond. The Art of War has also been applied, with much success, to business and managerial strategies.",
       "link": "https://gotobuyDrugaKnjiga.com",
-      "genre" : [ "top-rated", "business-leadership-skills", "military-history", "leadership" ],
-      "language" : [ "Serbian" ]
+      "genres" : [ "top-rated", "business-leadership-skills", "military-history", "leadership" ],
+      "language" : [ "Serbian" ],
+      "thumbnail":  "https://placeimg.com/230/260/animals"
     },
     {
       "id": 3,
@@ -24,8 +26,9 @@
       "author": "Robert Sidney Bowen",
       "description": "No description",
       "link": "https://gotobuyTrecaKnjiga.com",
-      "genre" : [ "young-adult", "word-war, 1939-1945", "Juvenile Fiction" ],
-      "language" : [ "German" ]
+      "genres" : [ "top-rated","young-adult", "word-war, 1939-1945", "Juvenile Fiction" ],
+      "language" : [ "German" ],
+      "thumbnail":  "https://placeimg.com/230/260/animals"
     },
     {
       "id": 4,
@@ -33,8 +36,113 @@
       "author": "Victor Hugo",
       "description": "This is book 1 of 5. An ex-convict breaks parole and starts a new life as a righteous man, but is pursued by a police inspector. Along the way, the ex-convict joins a revolution, adopts a daughter, and beats people up. Hooray. (Summary by smileyman457)",
       "link": "https://gotobuyCetvrtaKnjiga.com",
-      "genre" : [ "romance", "literary-fiction"],
-      "language" : [ "Chinese" ]
+      "genres" : [ "top-rated","romance", "literary-fiction"],
+      "language" : [ "Chinese" ],
+      "thumbnail":  "https://placeimg.com/230/260/animals"
+    },
+    {
+      "id": 5,
+      "title": "Miserables 4",
+      "author": "Victor Hugo",
+      "description": "This is book 1 of 5. An ex-convict breaks parole and starts a new life as a righteous man, but is pursued by a police inspector. Along the way, the ex-convict joins a revolution, adopts a daughter, and beats people up. Hooray. (Summary by smileyman457)",
+      "link": "https://gotobuyCetvrtaKnjiga.com",
+      "genres" : ["top-rated", "romance", "literary-fiction"],
+      "language" : [ "Chinese" ],
+      "thumbnail":  "https://placeimg.com/230/260/animals"
+    },
+    {
+      "id": 6,
+      "title": "Miserables 4",
+      "author": "Victor Hugo",
+      "description": "This is book 1 of 5. An ex-convict breaks parole and starts a new life as a righteous man, but is pursued by a police inspector. Along the way, the ex-convict joins a revolution, adopts a daughter, and beats people up. Hooray. (Summary by smileyman457)",
+      "link": "https://gotobuyCetvrtaKnjiga.com",
+      "genres" : [ "top-rated","romance", "literary-fiction"],
+      "language" : [ "Chinese" ],
+      "thumbnail":  "https://placeimg.com/230/260/animals"
+    },
+    {
+      "id": 7,
+      "title": "Miserables 4",
+      "author": "Victor Hugo",
+      "description": "This is book 1 of 5. An ex-convict breaks parole and starts a new life as a righteous man, but is pursued by a police inspector. Along the way, the ex-convict joins a revolution, adopts a daughter, and beats people up. Hooray. (Summary by smileyman457)",
+      "link": "https://gotobuyCetvrtaKnjiga.com",
+      "genres" : [ "top-rated","romance", "literary-fiction"],
+      "language" : [ "Chinese" ],
+      "thumbnail":  "https://placeimg.com/230/260/animals"
+    },
+
+
+
+
+    {
+      "id": 8,
+      "title": "Robinson Crusoe",
+      "author": "Daniel Defoe",
+      "description": "Daniel Defoe’s The Life and Strange Surprizing Adventures of Robinson Crusoe of York, Mariner (1719) is considered by many the first English novel. Based on the real-life experiences of the castaway Alexander Selkirk, the book has had a perrenial appeal among readers of all ages-–especially the young adult reading public–-who continue to find inspiration in the inventive resourcefulness of its hero, sole survivor of a shipwreck who is marooned on an uninhabited island.\n\nEspecially poignant, after more than two decades of unbroken solitude, is the affection that Robinson develops for Friday, another survivor fleeing certain death at the hands of enemy tribesmen from the South American continent. (Summary by Denny Sayers)",
+      "link": "https://gotobuyPrvaKnjiga.com",
+      "genres" : [ "trending", "fiction", "action & adventure fiction" ],
+      "language" : [ "English" ],
+      "thumbnail": "https://placeimg.com/230/260/animals"
+    },
+    {
+      "id": 9,
+      "title": "The Art of war",
+      "author": "Sun Tzu",
+      "description": "The Art of War is a Chinese military treatise written during the 6th century BC by Sun Tzu. Composed of 13 chapters, each of which is devoted to one aspect of warfare, it has long been praised as the definitive work on military strategies and tactics of its time. The Art of War is one of the oldest and most famous studies of strategy and has had a huge influence on both military planning and beyond. The Art of War has also been applied, with much success, to business and managerial strategies.",
+      "link": "https://gotobuyDrugaKnjiga.com",
+      "genres" : [ "trending", "business-leadership-skills", "military-history", "leadership" ],
+      "language" : [ "Serbian" ],
+      "thumbnail":  "https://placeimg.com/230/260/animals"
+    },
+    {
+      "id": 10,
+      "title": "Dave Dawson with the Commandos",
+      "author": "Robert Sidney Bowen",
+      "description": "No description",
+      "link": "https://gotobuyTrecaKnjiga.com",
+      "genres" : [ "trending","young-adult", "word-war, 1939-1945", "Juvenile Fiction" ],
+      "language" : [ "German" ],
+      "thumbnail":  "https://placeimg.com/230/260/animals"
+    },
+    {
+      "id": 11,
+      "title": "Miserables 4",
+      "author": "Victor Hugo",
+      "description": "This is book 1 of 5. An ex-convict breaks parole and starts a new life as a righteous man, but is pursued by a police inspector. Along the way, the ex-convict joins a revolution, adopts a daughter, and beats people up. Hooray. (Summary by smileyman457)",
+      "link": "https://gotobuyCetvrtaKnjiga.com",
+      "genres" : [ "trending","romance", "literary-fiction"],
+      "language" : [ "Chinese" ],
+      "thumbnail":  "https://placeimg.com/230/260/animals"
+    },
+    {
+      "id": 12,
+      "title": "Miserables 4",
+      "author": "Victor Hugo",
+      "description": "This is book 1 of 5. An ex-convict breaks parole and starts a new life as a righteous man, but is pursued by a police inspector. Along the way, the ex-convict joins a revolution, adopts a daughter, and beats people up. Hooray. (Summary by smileyman457)",
+      "link": "https://gotobuyCetvrtaKnjiga.com",
+      "genres" : ["trending", "romance", "literary-fiction"],
+      "language" : [ "Chinese" ],
+      "thumbnail":  "https://placeimg.com/230/260/animals"
+    },
+    {
+      "id": 13,
+      "title": "Miserables 4",
+      "author": "Victor Hugo",
+      "description": "This is book 1 of 5. An ex-convict breaks parole and starts a new life as a righteous man, but is pursued by a police inspector. Along the way, the ex-convict joins a revolution, adopts a daughter, and beats people up. Hooray. (Summary by smileyman457)",
+      "link": "https://gotobuyCetvrtaKnjiga.com",
+      "genres" : [ "trending","romance", "literary-fiction"],
+      "language" : [ "Chinese" ],
+      "thumbnail":  "https://placeimg.com/230/260/animals"
+    },
+    {
+      "id": 14,
+      "title": "Miserables 4",
+      "author": "Victor Hugo",
+      "description": "This is book 1 of 5. An ex-convict breaks parole and starts a new life as a righteous man, but is pursued by a police inspector. Along the way, the ex-convict joins a revolution, adopts a daughter, and beats people up. Hooray. (Summary by smileyman457)",
+      "link": "https://gotobuyCetvrtaKnjiga.com",
+      "genres" : [ "trending","romance", "literary-fiction"],
+      "language" : [ "Chinese" ],
+      "thumbnail":  "https://placeimg.com/230/260/animals"
     }
   ]
 }

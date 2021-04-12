@@ -1,0 +1,31 @@
+.BookCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 .5rem
+}
+
+.BookGenres {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+}
+
+.BookGenre {
+    background-color: red;
+    color: white;
+    border-radius: 4px;
+    padding: .5rem 1rem;
+    margin: 0 .5rem .5rem 0;
+}
+
+.BookThumb {
+    min-width: 23rem;
+    min-height: 26rem;
+    background-color: grey;
+}
+
+.BookBtn {
+    margin-top: .5rem;
+}

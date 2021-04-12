@@ -2,15 +2,13 @@
     height: 8rem;
     padding: 2rem;
     width: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
     background-color: #f8f6fe;
+    position: sticky;
+    //top: 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
     box-sizing: border-box;
-    z-index: 90;
 
     nav {
         height: 100%;

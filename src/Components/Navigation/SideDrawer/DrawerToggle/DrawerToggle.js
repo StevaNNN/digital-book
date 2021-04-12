@@ -3,13 +3,19 @@ import classes from  './DrawerToggle.module.scss';
 import Button from "../../../UI/Button/Button";
 
 const drawerToggle = props => {
+
+    const {
+        clicked,
+        inSideBar
+    } = props;
+
     return(
         <div className={classes.DrawerToggle}>
             <Button
                 aria={{label: "toggle-drawer"}}
-                onClick={props.clicked}
+                onClick={clicked}
                 look="flat"
-                iconClass={`db-icon ${props.inSideBar ? 'db-close' : 'db-menu'}`}
+                iconClass={`db-icon ${inSideBar ? 'db-close' : 'db-menu'}`}
             />
         </div>
     )

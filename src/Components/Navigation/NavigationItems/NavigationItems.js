@@ -3,15 +3,21 @@ import NavigationItem from './NavigationItem/NavigationItem';
 import classes from './NavigationItems.module.scss';
 
 const navigationItems = props => {
+
+    const {
+        sideDrawerToolbar,
+        tabIndexInSideDrawer
+    } = props;
+
     return(
         <ul className={classes.NavigationItems}>
-            {props.sideDrawerToolbar && <>
-                <NavigationItem tabIndex={props.tabIndexInSideDrawer} link="/">Home</NavigationItem>
-                <NavigationItem tabIndex={props.tabIndexInSideDrawer} link="/about" >About</NavigationItem>
+            {sideDrawerToolbar && <>
+                <NavigationItem tabIndex={tabIndexInSideDrawer} link="/">Home</NavigationItem>
+                <NavigationItem tabIndex={tabIndexInSideDrawer} link="/about" >About</NavigationItem>
             </>}
-            <NavigationItem tabIndex={props.tabIndexInSideDrawer} link="/trending">Trending</NavigationItem>
-            <NavigationItem tabIndex={props.tabIndexInSideDrawer} link="/top-rated" >TopRated</NavigationItem>
-            <NavigationItem tabIndex={props.tabIndexInSideDrawer} link="/genres" >Genres</NavigationItem>
+            <NavigationItem tabIndex={tabIndexInSideDrawer} link="/trending">Trending</NavigationItem>
+            <NavigationItem tabIndex={tabIndexInSideDrawer} link="/top-rated" >TopRated</NavigationItem>
+            <NavigationItem tabIndex={tabIndexInSideDrawer} link="/genres" >Genres</NavigationItem>
         </ul>
     )
 }

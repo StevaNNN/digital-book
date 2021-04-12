@@ -2,8 +2,13 @@ import React from "react";
 import classes from './Backdrop.module.scss';
 
 const backdrop = props => {
+    const {
+        show,
+        clicked
+    } = props;
+
     return(
-        props.show ? <div className={classes.Backdrop} onClick={props.clicked}/> : null
+        show ? <div className={classes.Backdrop} onClick={clicked} /> : null
     )
 }
 

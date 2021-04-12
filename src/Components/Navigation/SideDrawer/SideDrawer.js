@@ -7,23 +7,30 @@ import classes from './SideDrawer.module.scss';
 
 const sideDrawer = props => {
 
+    const {
+        opened,
+        backDropUp,
+        backDropClicked,
+        onCloseSideBarClick
+    } = props;
+
     let attachedClasses = [classes.SideDrawer, classes.Close];
-    if (props.opened) {
+    if (opened) {
         attachedClasses = [classes.SideDrawer, classes.Open]
     }
 
     return(
         <>
             <BackDrop
-                show={props.backDropUp}
-                clicked={props.backDropClicked}
+                show={backDropUp}
+                clicked={backDropClicked}
             />
             <div className={attachedClasses.join(' ')}>
                 <div className={classes.DrawerToggler}>
-                    <DrawerToggle clicked={props.onCloseSideBarClick} inSideBar />
+                    <DrawerToggle clicked={onCloseSideBarClick} inSideBar />
                 </div>
                 <nav>
-                    <NavigationItems sideDrawerToolbar tabIndexInSideDrawer={props.opened ? 0 : -1}/>
+                    <NavigationItems sideDrawerToolbar tabIndexInSideDrawer={opened ? 0 : -1}/>
                 </nav>
                 <SocialBar/>
             </div>

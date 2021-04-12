@@ -11,7 +11,10 @@ const Button = props => {
         additionalClass,
         primary,
         onClick,
-        children
+        children,
+        rounded,
+        block,
+        large
     } = props;
 
     const btnClasses = classNames(
@@ -20,6 +23,9 @@ const Button = props => {
 
             [`${classes.primary}`]:  primary,
             [`${classes.flat}`]:     look === 'flat',
+            [`${classes.rounded}`]:  rounded,
+            [`${classes.block}`]:    block,
+            [`${classes.large}`]:    large,
             [`${classes.iconOnly}`]: children === undefined && iconClass
         }
     )

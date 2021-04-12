@@ -24,10 +24,10 @@
         border-color: $db-btn-active-hover-border-color;
     }
 
-    &:focus {
-        border-color: $db-btn-focus-border-color;
-        box-shadow: $db-btn-focus-box-shadow;
-    }
+    //&:focus {
+    //    border-color: $db-btn-focus-border-color;
+    //    box-shadow: $db-btn-focus-box-shadow;
+    //}
 }
 
 .iconOnly {
@@ -50,10 +50,10 @@
         border-color: $db-btn-primary-active-hover-border-color;
     }
 
-    &:focus {
-        outline: 1px solid $white;
-        outline-offset: -3px;
-    }
+    //&:focus {
+    //    outline: 1px solid $white;
+    //    outline-offset: -3px;
+    //}
 }
 
 .icon {
@@ -77,4 +77,16 @@
         background-color: $db-btn-primary-active-hover-bg-color;
         border-color: $db-btn-primary-active-hover-border-color;
     }
+}
+
+.rounded {
+    border-radius: 1.6rem;
+}
+
+.block {
+    width: 100%;
+}
+
+.large {
+    font-size: 2rem;
 }

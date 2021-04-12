@@ -1,3 +1,13 @@
-.db-section {
+.#{$prefix}section {
     padding: 4rem 2rem;
+
+    .#{$prefix}section-header {
+        display: flex;
+        justify-content: space-between;
+        padding: 2rem 0;
+
+        h1 {
+            margin: 0;
+        }
+    }
 }
