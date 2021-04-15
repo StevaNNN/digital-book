@@ -39,10 +39,10 @@ const sliderAbstract = (props) => {
 
     const { books, bookClicked } = props
 
-    let content = books.map((book, index) => {
+    let content = books && books.map((book, index) => {
         return(
             <BookCard
-                onClick={bookClicked}
+                onClick={bookClicked.bind(this, index)}
                 src={book.thumbnail}
                 alt={book.title}
                 key={index}

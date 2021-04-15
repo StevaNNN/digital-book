@@ -1,0 +1,51 @@
+@import "../../../Theme/sass/abstract/variables";
+
+.WhatPeopleSayHeader {
+    justify-content: center !important;
+    margin-bottom: 2rem;
+}
+
+.CommentsWrap {
+    display: flex;
+
+    @media screen and (max-width: 1240px){
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .Comment {
+        border-radius: 1.6rem;
+        padding: 2rem;
+        box-shadow: 0 0 10px rgba($black, .2);
+        width: 33.333%;
+
+        @media screen and (max-width: 1240px){
+            width: 50%;
+            margin-bottom: 2rem;
+        }
+
+
+        @media screen and (min-width: 1240px) {
+            &:not(:last-of-type) {
+                margin-right: 2rem;
+            }
+        }
+    }
+
+    .CommentDetails {
+        margin-bottom: 2rem;
+    }
+
+    .Person {
+        display: flex;
+        align-items: center;
+
+        img {
+            margin-right: 2rem;
+            border-radius: 50%;
+            max-width: 100%;
+            height: auto;
+            object-fit: contain;
+        }
+    }
+}

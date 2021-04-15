@@ -1,5 +1,7 @@
 @import "sass/abstract/variables";
 
+@import "sass/abstract/helpers";
+
 @import "sass/abstract/icon-unicodes";
 
 @import "sass/abstract/base";
@@ -8,6 +10,6 @@
 
 @import "sass/abstract/mixins/all";
 
-@import "sass/components/section";
+@import "sass/shared/shared";
 
 @import "sass/third-party/slick-slider";

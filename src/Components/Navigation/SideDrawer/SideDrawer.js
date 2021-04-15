@@ -32,7 +32,7 @@ const sideDrawer = props => {
                 <nav>
                     <NavigationItems sideDrawerToolbar tabIndexInSideDrawer={opened ? 0 : -1}/>
                 </nav>
-                <SocialBar/>
+                <SocialBar tabIndexInSideDrawer={opened ? 0 : -1}/>
             </div>
         </>
     );

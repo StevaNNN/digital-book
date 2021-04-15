@@ -1,13 +1,12 @@
 import React from "react";
+import {Route, Switch} from "react-router-dom";
 import Header from '../../Components/Navigation/Header/Header';
 import SideDrawer from '../../Components/Navigation/SideDrawer/SideDrawer';
-import TopRated from "../../Pages/Home/TopRated/TopRated";
+import TopRated from "../../Pages/TopRated/TopRated";
 import Home from '../../Pages/Home/Home';
-import Trending from "../../Pages/Home/Trending/Trending";
-import Genres from "../../Pages/Home/Genres/Genres";
-import Languages from "../../Pages/Home/Languages/Languages";
-import {Route, Switch} from "react-router-dom";
-import classes from './Viewport.module.scss';
+import Trending from "../../Pages/Trending/Trending";
+import Genres from "../../Pages/Genres/Genres";
+import Languages from "../../Pages/Languages/Languages";
 import Footer from "../../Components/Navigation/Footer/Footer";
 
 class Viewport extends React.Component {
@@ -39,7 +38,7 @@ class Viewport extends React.Component {
                     backDropClicked={this.toggleBackdrop}
                     onCloseSideBarClick={this.toggleBackdrop}
                 />
-                <main className={classes.Main}>
+                <main>
                     <Switch>
                         <Route path={'/top-rated'} component={TopRated}/>
                         <Route path={'/trending'} component={Trending}/>

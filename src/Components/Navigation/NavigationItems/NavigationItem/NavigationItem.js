@@ -11,7 +11,10 @@ const navigationItem = props => {
 
     return(
         <li className={classes.NavigationItem}>
-            <NavLink to={link} activeClassName={classes.active}>
+            <NavLink
+                to={link}
+                activeClassName={classes.active}
+            >
                 {children}
             </NavLink>
         </li>

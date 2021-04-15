@@ -22,7 +22,7 @@
 /// @group functions
 /// @param {string,string} $value quoted or unquoted
 /// returns true if the $value is type of number
-@function t-is-number($value) {
+@function is-number($value) {
     @return type-of($value) == 'number';
 }
 

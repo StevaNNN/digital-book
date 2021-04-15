@@ -13,7 +13,7 @@ const bookCard = (props) => {
     } = props;
 
     return(
-        <div onClick={onClick} className={classes.BookCard}>
+        <div onClick={onClick} className={classes.BookCard} tabIndex={0}>
             <img src={src} alt={alt} className={classes.BookThumb}/>
             {onGenrePage && <>
                 <div className={classes.BookGenres}>

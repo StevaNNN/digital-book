@@ -15,6 +15,10 @@
         font-family: $icon-font-family;
         font-size: 4.8rem;
 
+        &:focus {
+            outline: 1px solid blue;
+        }
+
         &::before {
             font-family: inherit;
             font-size: inherit;
