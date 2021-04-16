@@ -1,8 +1,8 @@
 import React from "react";
 import classes from './Footer.module.scss';
-import SocialBar from "../../SocialBar/SocialBar";
-import NavigationItems from "../NavigationItems/NavigationItems";
-import Logo from "../../Logo/Logo";
+import SocialBar from "../../Components/SocialBar/SocialBar";
+import NavigationItems from "../../Components/Navigation/NavigationItems/NavigationItems";
+import Logo from "../../Components/Logo/Logo";
 
 const footer = (props) => {
     const {onClickScroll} = props;

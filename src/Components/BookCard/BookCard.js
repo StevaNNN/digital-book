@@ -5,7 +5,6 @@ import Button from "../UI/Button/Button";
 const bookCard = (props) => {
 
     const {
-        onGenrePage,
         genres,
         onClick,
         src,
@@ -15,7 +14,7 @@ const bookCard = (props) => {
     return(
         <div onClick={onClick} className={classes.BookCard} tabIndex={0}>
             <img src={src} alt={alt} className={classes.BookThumb}/>
-            {onGenrePage && <>
+            {genres && <>
                 <div className={classes.BookGenres}>
                     {genres.map((genre, index) => {
                         return(

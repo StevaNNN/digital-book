@@ -7,7 +7,7 @@ import Home from '../../Pages/Home/Home';
 import Trending from "../../Pages/Trending/Trending";
 import Genres from "../../Pages/Genres/Genres";
 import Languages from "../../Pages/Languages/Languages";
-import Footer from "../../Components/Navigation/Footer/Footer";
+import Footer from "../../Shared/Footer/Footer";
 import About from "../../Pages/About/About";
 
 class Viewport extends React.Component {

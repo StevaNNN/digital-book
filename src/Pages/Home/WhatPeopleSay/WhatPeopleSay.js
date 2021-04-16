@@ -3,8 +3,6 @@ import classes from './WhatPeopleSay.module.scss';
 
 const whatPeopeleSay = (props) => {
 
-    const {} = props;
-
     return(
         <section className={`db-section`}>
             <div className={'db-section-wrapper'}>
