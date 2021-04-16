@@ -66,6 +66,7 @@
         flex-direction: column;
         justify-content: center;
         max-width: 120rem;
+        width: 100%;
     }
 
     .#{$prefix}section-header {
@@ -76,6 +77,7 @@
 
         h1 {
             margin: 0;
+            font-size: 3.2rem;
         }
     }
 
@@ -107,4 +109,11 @@
         background-color: transparent;
         border-radius: 16px;
     }
+}
+
+.#{$prefix}cp {
+    background-color: #f8f6fe;
+    margin: 0;
+    text-align: center;
+    padding-bottom: 2rem;
 }

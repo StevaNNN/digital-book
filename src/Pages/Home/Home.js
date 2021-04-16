@@ -9,7 +9,7 @@ import {genrePicker} from "../../Util";
 import WhatPeopleSay from "./WhatPeopleSay/WhatPeopleSay";
 
 class Home extends React.Component {
-
+    genreRef;
     state = {
         modalOpened: false,
         selectedBook: {},
@@ -47,13 +47,14 @@ class Home extends React.Component {
 
 
     render() {
-
         const {
             topRatedBooks,
             trendingBooks,
             modalOpened,
             selectedBook
         } = this.state;
+
+        console.log(this.genreRef)
 
         return (
             <>
@@ -69,6 +70,7 @@ class Home extends React.Component {
                     bookClicked={this.trendingBookClicked}
                 />
                 <Genres
+                    ref={(genre)=>this.genreRef = genre}
                     goToSpecificGenre={this.changeToGenre}
                 />
                 <Languages

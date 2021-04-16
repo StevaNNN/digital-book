@@ -1,19 +1,28 @@
 import React from "react";
 import {NavLink} from "react-router-dom";
 import classes from './NavigationItem.module.scss';
+import classNames from "classnames";
 
 const navigationItem = props => {
 
     const {
         children,
-        link
+        link,
+        inFooter
     } = props;
 
+    const navItemClass = classNames(
+        classes.NavigationItem,
+        {
+            [classes.inFooter]: inFooter
+        }
+    )
+
     return(
-        <li className={classes.NavigationItem}>
+        <li className={navItemClass}>
             <NavLink
                 to={link}
-                activeClassName={classes.active}
+                activeClassName={link !== "/" ? classes.active : null}
             >
                 {children}
             </NavLink>

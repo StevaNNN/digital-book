@@ -8,11 +8,13 @@ import Trending from "../../Pages/Trending/Trending";
 import Genres from "../../Pages/Genres/Genres";
 import Languages from "../../Pages/Languages/Languages";
 import Footer from "../../Components/Navigation/Footer/Footer";
+import About from "../../Pages/About/About";
 
 class Viewport extends React.Component {
 
     state = {
-        backDropActive: false
+        backDropActive: false,
+        scrollInto: ''
     }
 
     openBackdrop = () => {
@@ -26,8 +28,14 @@ class Viewport extends React.Component {
         })
     }
 
+    onClickScroll = (e) => {
+        this.setState({
+            scrollInto: e.target.innerHTML
+        })
+    }
+
     render() {
-        const {backDropActive} = this.state;
+        const {backDropActive, scrollInto} = this.state;
 
         return(
             <>
@@ -44,10 +52,11 @@ class Viewport extends React.Component {
                         <Route path={'/trending'} component={Trending}/>
                         <Route path={'/genres'} component={Genres}/>
                         <Route path={'/languages'} component={Languages}/>
-                        <Route path={'/'} component={Home}/>
+                        <Route path={'/about'} component={About}/>
+                        <Route render={() => <Home scrollTo={scrollInto}/>} />
                     </Switch>
                 </main>
-                <Footer/>
+                <Footer onClickScroll={this.onClickScroll}/>
             </>
         );
     }

@@ -6,6 +6,18 @@
     height: 100%;
     text-align: right;
 
+    &.inFooter {
+        a {
+            color: #777;
+            font-size: 1.6rem;
+
+            &::after {
+                background-color: #777;
+                height: .4rem;
+            }
+        }
+    }
+
     a {
         display: inline-flex;
         justify-content: center;

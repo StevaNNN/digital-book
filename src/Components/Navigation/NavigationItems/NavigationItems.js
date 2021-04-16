@@ -6,18 +6,22 @@ const navigationItems = props => {
 
     const {
         sideDrawerToolbar,
-        tabIndexInSideDrawer
+        tabIndexInSideDrawer,
+        footer
     } = props;
+
+    let extra =  sideDrawerToolbar || footer ?
+        <>
+            <NavigationItem inFooter={footer} tabIndex={tabIndexInSideDrawer} link="/">Home</NavigationItem>
+            <NavigationItem inFooter={footer} tabIndex={tabIndexInSideDrawer} link="/about" >About</NavigationItem>
+        </> : null
 
     return(
         <ul className={classes.NavigationItems}>
-            {sideDrawerToolbar && <>
-                <NavigationItem tabIndex={tabIndexInSideDrawer} link="/">Home</NavigationItem>
-                <NavigationItem tabIndex={tabIndexInSideDrawer} link="/about" >About</NavigationItem>
-            </>}
-            <NavigationItem tabIndex={tabIndexInSideDrawer} link="/top-rated" >TopRated</NavigationItem>
-            <NavigationItem tabIndex={tabIndexInSideDrawer} link="/trending">Trending</NavigationItem>
-            <NavigationItem tabIndex={tabIndexInSideDrawer} link="/genres" >Genres</NavigationItem>
+            {extra}
+            <NavigationItem inFooter={footer} tabIndex={tabIndexInSideDrawer} link="/top-rated" >TopRated</NavigationItem>
+            <NavigationItem inFooter={footer} tabIndex={tabIndexInSideDrawer} link="/trending">Trending</NavigationItem>
+            {!footer && <NavigationItem tabIndex={tabIndexInSideDrawer} link="/genres" >Genres</NavigationItem>}
         </ul>
     )
 }
