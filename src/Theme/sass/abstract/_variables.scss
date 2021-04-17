@@ -3,100 +3,124 @@
 //--------------------------------------------------------------------------------------------------------------------//
 /// App Global prefix
 /// @group app-config
-$prefix: 'db-' !default;
+$prefix: "db-" !default;
 /// App font path
 /// @group app-config
-$fonts-path:            'resources/fonts/' !default;
+$fonts-path: "resources/fonts/" !default;
 /// App imgs path
 /// @group app-config
-$imgs-path:             'resources/imgs/' !default;
+$imgs-path: "resources/imgs/" !default;
 /// App icon path
 /// @group app-config
-$icon-path:             'resources/icons/' !default;
+$icon-path: "resources/icons/" !default;
 //--------------------------------------------------------------------------------------------------------------------//
 /// A map of breakpoints
 /// @group app-config
 $breakpoints: (
-        xs: 576px,
-        sm: 768px,
-        md: 992px,
-        lg: 1200px
+  xs: 576px,
+  sm: 768px,
+  md: 992px,
+  lg: 1200px,
 );
 //--------------------------------------------------------------------------------------------------------------------//
 //sass-lint:disable space-before-colon
 /// App map of fonts
 /// @group fonts
-$fonts-map: ((
-        'open-sans-regular': (
-                'display': 'fallback',
-                'name'   : 'open-sans-regular',
-                'style'  : 'normal',
-                'weight' : 'normal',
-                'formats': 'ttf'
-        ),
-        'open-sans-semibold': (
-                'display': 'fallback',
-                'name'   : 'open-sans-semibold',
-                'style'  : 'normal',
-                'weight' : 'normal',
-                'formats': 'ttf'
-        ),
-        'open-sans-bold': (
-                'display': 'fallback',
-                'name'   : 'open-sans-bold',
-                'style'  : 'normal',
-                'weight' : 'normal',
-                'formats': 'ttf'
-        ),
-        'open-sans-light-italic': (
-                'display': 'falback',
-                'name'	 : 'open-sans-light-italic',
-                'style'  : 'normal',
-                'weight' : 'normal',
-                'formats': 'ttf'
-        )
-));
+$fonts-map: (
+  (
+    "open-sans-regular": (
+      "display": "fallback",
+      "name": "open-sans-regular",
+      "style": "normal",
+      "weight": "normal",
+      "formats": "ttf",
+    ),
+    "open-sans-semibold": (
+      "display": "fallback",
+      "name": "open-sans-semibold",
+      "style": "normal",
+      "weight": "normal",
+      "formats": "ttf",
+    ),
+    "open-sans-bold": (
+      "display": "fallback",
+      "name": "open-sans-bold",
+      "style": "normal",
+      "weight": "normal",
+      "formats": "ttf",
+    ),
+    "open-sans-light-italic": (
+      "display": "falback",
+      "name": "open-sans-light-italic",
+      "style": "normal",
+      "weight": "normal",
+      "formats": "ttf",
+    ),
+  )
+);
 //--------------------------------------------------------------------------------------------------------------------//
 /// App font reference map
 /// @group fonts
 $fonts-reference-map: (
-        'open-sans':              ('open-sans-regular',      'Helvetica Neue', sans-serif),
-        'open-sans-light-italic': ('open-sans-light-italic', 'Helvetica Neue', sans-serif),
-        'open-sans-semibold':     ('open-sans-semibold',     'Helvetica Neue', sans-serif),
-        'open-sans-bold':         ('open-sans-bold',         'Helvetica Neue', sans-serif)
+  "open-sans": (
+    "open-sans-regular",
+    "Helvetica Neue",
+    sans-serif,
+  ),
+  "open-sans-light-italic": (
+    "open-sans-light-italic",
+    "Helvetica Neue",
+    sans-serif,
+  ),
+  "open-sans-semibold": (
+    "open-sans-semibold",
+    "Helvetica Neue",
+    sans-serif,
+  ),
+  "open-sans-bold": (
+    "open-sans-bold",
+    "Helvetica Neue",
+    sans-serif,
+  ),
 ) !default;
 //--------------------------------------------------------------------------------------------------------------------//
 /// App font family
 /// @group fonts
-$font-family:           		map-get($fonts-reference-map, open-sans) !default;
+$font-family: map-get($fonts-reference-map, open-sans) !default;
 /// App font family semibold
 /// @group fonts
-$font-family-semibold:  		map-get($fonts-reference-map, open-sans-semibold) !default;
+$font-family-semibold: map-get(
+  $fonts-reference-map,
+  open-sans-semibold
+) !default;
 /// App font family bold
 /// @group fonts
-$font-family-bold:      		map-get($fonts-reference-map, open-sans-bold) !default;
+$font-family-bold: map-get($fonts-reference-map, open-sans-bold) !default;
 /// App font family light italic
 /// @group fonts
-$font-family-light-italic:      map-get($fonts-reference-map, open-sans-light-italic) !default;
+$font-family-light-italic: map-get(
+  $fonts-reference-map,
+  open-sans-light-italic
+) !default;
 //--------------------------------------------------------------------------------------------------------------------//
 /// App font size xs
 /// @group fonts
-$font-size-xs:          1rem !default;
+$font-size-xs: 1rem !default;
 /// App font size sm
 /// @group fonts
-$font-size-sm:          1.2rem !default;
+$font-size-sm: 1.2rem !default;
 /// App font size
 /// @group fonts
-$font-size:             1.4rem !default;
+$font-size: 1.4rem !default;
 /// App font size m
 /// @group fonts
-$font-size-m:           1.6rem !default;
+$font-size-m: 1.6rem !default;
 /// App font size l
 /// @group fonts
-$font-size-l:           1.8rem !default;
+$font-size-l: 1.8rem !default;
 /// App font size xl
 /// @group fonts
-$font-size-lg:          2rem !default;
+$font-size-lg: 2rem !default;
 //--------------------------------------------------------------------------------------------------------------------//
 /// App transition duration
 /// @group app-config
@@ -106,12 +130,13 @@ $transition-duration: 250ms !default;
 $transition-animation: ease-in-out !default;
 /// App transition
 /// @group app-config
-$transition: transition(color), transition(background-color), transition(border-color), transition(box-shadow) !default;
+$transition: transition(color), transition(background-color),
+  transition(border-color), transition(box-shadow) !default;
 //--------------------------------------------------------------------------------------------------------------------//
 $user-select-list: none, all, text !default;
 //--------------------------------------------------------------------------------------------------------------------//
 $heading-margin-bottom: 8px !default;
-$border-radius: .4rem  !default;
+$border-radius: 0.4rem !default;
 // COLORS
 $white: #fff !default;
 $black: #000 !default;
@@ -120,7 +145,7 @@ $text-color: #192962 !default;
 $neutral-color: #f4f5f7 !default;
 $border-color: lightgrey !default;
 // ICONS
-$icon-font-family: 'Material Icons' !default;
+$icon-font-family: "Material Icons" !default;
 $icons-font-size: 2.4rem !default;
 // BUTTONS
 $db-btn-font-family: $font-family-semibold !default;
@@ -129,7 +154,7 @@ $db-btn-line-height: 1.3 !default;
 $db-btn-border-radius: 3.6rem !default;
 $db-btn-min-width: 10rem !default;
 $db-btn-padding-h: 1.2rem !default;
-$db-btn-padding-v: .6rem !default;
+$db-btn-padding-v: 0.6rem !default;
 $db-btn-border-width: 1px !default;
 $db-btn-border-style: solid !default;
 
@@ -139,7 +164,7 @@ $db-btn-bg-color: transparent !default;
 $db-btn-border-color: $primary-color !default;
 // DEFAULT ACTIVE HOVER BUTTONS
 $db-btn-active-hover-text-color: lighten($db-btn-text-color, 10%) !default;
-$db-btn-active-hover-bg-color: lighten($primary-color, 25%)!default;
+$db-btn-active-hover-bg-color: lighten($primary-color, 25%) !default;
 $db-btn-active-hover-border-color: darken($db-btn-border-color, 5%) !default;
 // DEFAULT FOCUS BUTTONS
 $db-btn-focus-box-shadow: 0 0 2px $primary-color !default;
@@ -151,17 +176,23 @@ $db-btn-primary-bg-color: $primary-color !default;
 $db-btn-primary-border-color: $primary-color !default;
 // PRIMARY ACTIVE HOVER BUTTONS
 $db-btn-primary-active-hover-text-color: $white !default;
-$db-btn-primary-active-hover-bg-color: darken($db-btn-primary-bg-color, 5%) !default;
-$db-btn-primary-active-hover-border-color: darken($db-btn-primary-border-color, 5%) !default;
+$db-btn-primary-active-hover-bg-color: darken(
+  $db-btn-primary-bg-color,
+  5%
+) !default;
+$db-btn-primary-active-hover-border-color: darken(
+  $db-btn-primary-border-color,
+  5%
+) !default;
 
 // Backdrop
-$db-backdrop-bg-color: rgba($black, .5) !default;
+$db-backdrop-bg-color: rgba($black, 0.5) !default;
 $db-backdrop-z-index: 100 !default;
 
 // Dialog
 $db-dialog-backdrop: $db-backdrop-bg-color !default;
-$db-dialog-min-width: 50rem !default;
-$db-dialog-min-height: 30rem !default;
+$db-dialog-width: 50rem !default;
+$db-dialog-height: 60rem !default;
 $db-dialog-box-shadow: 0 0 12px $black !default;
 $db-dialog-bg-color: $white !default;
 $db-dialog-padding-v: 1.6rem !default;

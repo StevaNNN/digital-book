@@ -18,7 +18,7 @@
       "link": "https://gotobuyDrugaKnjiga.com",
       "genres" : [ "Top-Rated", "Romance", "Business-Leadership-Skills", "Military-History", "Leadership" ],
       "language" : [ "French" ],
-      "thumbnail":  "https://placeimg.com/230/260/animals"
+      "thumbnail":  "https://placeimg.com/230/260/arch"
     },
     {
       "id": 3,
@@ -28,7 +28,7 @@
       "link": "https://gotobuyTrecaKnjiga.com",
       "genres" : [ "Top-Rated", "Mystery", "Word-War, 1939-1945", "Juvenile Fiction" ],
       "language" : [ "German" ],
-      "thumbnail":  "https://placeimg.com/230/260/animals"
+      "thumbnail":  "https://placeimg.com/230/260/nature"
     },
     {
       "id": 4,
@@ -38,7 +38,7 @@
       "link": "https://gotobuyCetvrtaKnjiga.com",
       "genres" : [ "Top-Rated", "Children", "Literary-Fiction"],
       "language" : [ "Italian" ],
-      "thumbnail":  "https://placeimg.com/230/260/animals"
+      "thumbnail":  "https://placeimg.com/230/260/people"
     },
     {
       "id": 5,
@@ -48,7 +48,7 @@
       "link": "https://gotobuyCetvrtaKnjiga.com",
       "genres" : ["Top-Rated", "History", "Literary-Fiction"],
       "language" : [ "Spanish" ],
-      "thumbnail":  "https://placeimg.com/230/260/animals"
+      "thumbnail":  "https://placeimg.com/230/260/tech"
     },
     {
       "id": 6,

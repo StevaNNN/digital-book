@@ -1,4 +1,5 @@
 import React from 'react';
+import Button from '../../Components/UI/Button/Button';
 import clases from './BookInDialog.module.scss';
 
 const bookInDialog = (props) => {
@@ -20,18 +21,27 @@ const bookInDialog = (props) => {
     }
 
     return (
-        <div>
-            <h3>{title}</h3>
-            <h6>{author}</h6>
-            <p style={{maxWidth: '300px'}}>{description}</p>
-            <img style={{maxWidth: '300px', height: '300px'}} src={thumbnail} alt={title}/>
-            <a
-                onClick={(event) => onClickBuy(event, link)}
-                aria-label={'trt'}
-                href={"/"}
-            >
-                Buy
-            </a>
+        <div className={clases.BookWrapper}>
+            <div>
+                <div>
+                    <span className={clases.label}>Title:</span>
+                    <h3>{title}</h3>
+                </div>
+                <div>
+                    <span className={clases.label}>Author:</span>
+                    <h6>{author}</h6>
+                </div>
+                <div>
+                    <span className={clases.label}>Description:</span>
+                    <p>{description}</p>
+                </div>
+            </div>
+            <div>
+                <img style={{maxWidth: '300px', height: '300px'}} src={thumbnail} alt={title}/>
+                <Button large primary onClick={(event) => onClickBuy(event, link)}>
+                    Buy
+                </Button>
+            </div>
         </div>
     );
 };
