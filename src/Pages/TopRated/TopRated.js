@@ -1,15 +1,15 @@
 import React from 'react';
 import DynamicPage from "../../Shared/DynamicPage/DynamicPage";
 
-class TopRated extends React.Component{
+const topRated = (props) => {
 
-    render() {
-        return (
-            <div>
-                <DynamicPage/>
-            </div>
-        );
-    }
+    const { topRatedBooks } = props;
+
+    return (
+        <div>
+            <DynamicPage books={topRatedBooks}/>
+        </div>
+    );
 }
 
-export default TopRated;
+export default topRated;

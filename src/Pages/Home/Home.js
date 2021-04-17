@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Component} from 'react';
 import Intro from "./Intro/Intro";
 import TopRated from "./TopRated/TopRated";
 import Trending from "./Trending/Trending";
@@ -8,8 +8,8 @@ import Dialog from "../../Components/UI/Dialog/Dialog";
 import {genrePicker} from "../../Util";
 import WhatPeopleSay from "./WhatPeopleSay/WhatPeopleSay";
 
-class Home extends React.Component {
-    genreRef;
+class Home extends Component {
+    // genreRef;
     state = {
         modalOpened: false,
         selectedBook: {},
@@ -54,7 +54,9 @@ class Home extends React.Component {
             selectedBook
         } = this.state;
 
-        console.log(this.genreRef)
+        console.log(this.props)
+
+        // console.log(this.genreRef)
 
         return (
             <>
@@ -70,7 +72,7 @@ class Home extends React.Component {
                     bookClicked={this.trendingBookClicked}
                 />
                 <Genres
-                    ref={(genre)=>this.genreRef = genre}
+                    // ref={(genre)=>this.genreRef = genre}
                     goToSpecificGenre={this.changeToGenre}
                 />
                 <Languages

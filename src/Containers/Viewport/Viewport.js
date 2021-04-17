@@ -53,7 +53,7 @@ class Viewport extends React.Component {
                         <Route path={'/genres'} component={Genres}/>
                         <Route path={'/languages'} component={Languages}/>
                         <Route path={'/about'} component={About}/>
-                        <Route render={() => <Home scrollTo={scrollInto}/>} />
+                        <Route component={Home} />
                     </Switch>
                 </main>
                 <Footer onClickScroll={this.onClickScroll}/>

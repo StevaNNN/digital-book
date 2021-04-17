@@ -1,12 +1,8 @@
 import React from 'react';
 import BookCard from "../../Components/BookCard/BookCard";
-import data from '../../data.json'
-class DynamicPage extends React.Component{
 
-    state = {
-        arrayOfBooks: data.books,
-        selectedBook: {}
-    }
+
+class DynamicPage extends React.Component{
 
     onBookClick = (book) => {
         this.setState({
@@ -16,7 +12,9 @@ class DynamicPage extends React.Component{
 
     render() {
 
-        let renderBooks = this.state.arrayOfBooks.map(book => {
+        const { books } = this.props;
+
+        let renderBooks = books.map(book => {
             return(
                 <BookCard
                     alt={book.title}
