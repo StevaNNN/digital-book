@@ -9,7 +9,9 @@ const bookCard = (props) => {
         onClick,
         src,
         alt,
-        title
+        title,
+        author,
+        onSubmit
     } = props;
 
     return(
@@ -25,6 +27,7 @@ const bookCard = (props) => {
             />
             {genres && <>
                 <div>{title}</div>
+                <div>{author}</div>
                 <div className={classes.BookGenres}>
                     {genres.map((genre, index) => {
                         return(
@@ -32,7 +35,14 @@ const bookCard = (props) => {
                         )
                     })}
                 </div>
-                <Button block primary rounded large additionalClass={classes.BookBtn}>
+                <Button
+                    block
+                    primary
+                    rounded
+                    large
+                    onClick={onSubmit}
+                    additionalClass={classes.BookBtn}
+                >
                     Buy
                 </Button>
             </>

@@ -80,7 +80,13 @@ class Home extends Component {
                     <p>{selectedBook.author}</p>
                     <p style={{maxWidth: '300px'}}>{selectedBook.description}</p>
                     <img style={{maxWidth: '300px', height: '300px'}} src={selectedBook.thumbnail} alt={selectedBook.title}/>
-                    <a style={{padding: '10px', background: 'purple',borderRaidus: '16px'}} href={selectedBook.link} target="_blank">Buy</a>
+                    <a
+                        style={{padding: '10px', background: 'purple',borderRaidus: '16px'}}
+                        href={"/"}
+                        aria-label={'trt'}
+                    >
+                        Buy
+                    </a>
                 </Dialog>
             </>
         );

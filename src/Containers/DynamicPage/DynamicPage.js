@@ -24,13 +24,15 @@ class DynamicPage extends Component{
         }
     }
 
-
     onBookClick = (book) => {
         this.setState({
             selectedBook: book
-        })
-
-        console.log(this.state.selectedBook)
+        },() => {
+            const win = window.open(this.state.selectedBook.link, '_blank');
+            if(win !== null) {
+                win.focus();
+            }
+        });
     }
 
     render() {
@@ -55,9 +57,10 @@ class DynamicPage extends Component{
                     key={index}
                     alt={book.title}
                     genres={book.genres}
+                    author={book.author}
                     title={book.title}
                     src={book.thumbnail}
-                    onClick={this.onBookClick.bind(this, book)}
+                    onSubmit={this.onBookClick.bind(this, book)}
                 />
             );
         });
@@ -76,9 +79,10 @@ class DynamicPage extends Component{
                                     <BookCard
                                         alt={book.title}
                                         genres={book.genres}
+                                        author={book.author}
                                         title={book.title}
                                         src={book.thumbnail}
-                                        onClick={this.onBookClick.bind(this, book)}
+                                        onSubmit={this.onBookClick.bind(this, book)}
                                     />
                                 </div>
                             );
