@@ -9,12 +9,22 @@ import Genres from "../../Pages/Genres/Genres";
 import Languages from "../../Pages/Languages/Languages";
 import Footer from "../../Shared/Footer/Footer";
 import About from "../../Pages/About/About";
+import {genrePicker} from "../../Util";
 
 class Viewport extends React.Component {
 
     state = {
         backDropActive: false,
-        scrollInto: ''
+        scrollInto: '',
+        trendingBooks: [],
+        topRatedBooks: []
+    }
+
+    componentDidMount() {
+        this.setState({
+            trendingBooks: genrePicker('Trending'),
+            topRatedBooks: genrePicker('Top-Rated')
+        })
     }
 
     openBackdrop = () => {
@@ -35,7 +45,7 @@ class Viewport extends React.Component {
     }
 
     render() {
-        const {backDropActive, scrollInto} = this.state;
+        const {backDropActive} = this.state;
 
         return(
             <>
@@ -48,12 +58,30 @@ class Viewport extends React.Component {
                 />
                 <main>
                     <Switch>
-                        <Route path={'/top-rated'} component={TopRated}/>
-                        <Route path={'/trending'} component={Trending}/>
-                        <Route path={'/genres'} component={Genres}/>
-                        <Route path={'/languages'} component={Languages}/>
-                        <Route path={'/about'} component={About}/>
-                        <Route component={Home} />
+                        <Route
+                            path={'/top-rated'}
+                            render={(routeProps) => <TopRated {...routeProps} books={this.state.topRatedBooks}/>}
+                        />
+                        <Route
+                            path={'/trending'}
+                            render={() => <Trending/>}
+                        />
+                        <Route
+                            path={'/genres'}
+                            render={() => <Genres/>}
+                        />
+                        <Route
+                            path={'/languages'}
+                            render={()=> <Languages/>}
+                        />
+                        <Route
+                            path={'/about'}
+                            render={() => <About/>}
+                        />
+                        <Route
+                            path={"/"}
+                            render={(routeProps) => <Home {...routeProps}/>}
+                        />
                     </Switch>
                 </main>
                 <Footer onClickScroll={this.onClickScroll}/>

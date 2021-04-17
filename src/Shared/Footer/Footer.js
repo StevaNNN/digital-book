@@ -5,7 +5,9 @@ import NavigationItems from "../../Components/Navigation/NavigationItems/Navigat
 import Logo from "../../Components/Logo/Logo";
 
 const footer = (props) => {
-    const {onClickScroll} = props;
+    const {
+        onClickScroll
+    } = props;
 
     return(
        <>

@@ -1,14 +1,16 @@
 import React from 'react';
+import DynamicPage from "../../Shared/DynamicPage/DynamicPage";
 
-class Languages extends React.Component{
+const languages = (props) =>{
+    const {
+        books
+    } = props
 
-    render() {
-        return (
-            <div>
-                languages books page
-            </div>
-        );
-    }
+    return (
+        <div>
+            <DynamicPage books={books}/>
+        </div>
+    );
 }
 
-export default Languages;
+export default languages;

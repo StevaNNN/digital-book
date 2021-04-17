@@ -1,8 +1,19 @@
-import React from 'react';
+import React, {Component} from 'react';
 import BookCard from "../../Components/BookCard/BookCard";
 
+class DynamicPage extends Component{
 
-class DynamicPage extends React.Component{
+    state = {
+        arrayOfBooks: [],
+        selectedBook: {}
+    }
+
+
+    componentDidUpdate() {
+        this.setState({
+            arrayOfBooks: this.props.books
+        })
+    }
 
     onBookClick = (book) => {
         this.setState({
@@ -11,12 +22,11 @@ class DynamicPage extends React.Component{
     }
 
     render() {
-
-        const { books } = this.props;
-
-        let renderBooks = books.map(book => {
+        const { arrayOfBooks } = this.state;
+        let renderBooks = arrayOfBooks && arrayOfBooks.map((book, index) => {
             return(
                 <BookCard
+                    key={index}
                     alt={book.title}
                     genres={book.genres}
                     src={book.thumbnail}

@@ -56,8 +56,6 @@ class Home extends Component {
 
         console.log(this.props)
 
-        // console.log(this.genreRef)
-
         return (
             <>
                 <Intro />
@@ -72,7 +70,6 @@ class Home extends Component {
                     bookClicked={this.trendingBookClicked}
                 />
                 <Genres
-                    // ref={(genre)=>this.genreRef = genre}
                     goToSpecificGenre={this.changeToGenre}
                 />
                 <Languages

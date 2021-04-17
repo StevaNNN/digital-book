@@ -4,7 +4,11 @@ import classes from './TopRated.module.scss';
 import Button from "../../../Components/UI/Button/Button";
 
 const topRated = props => {
-    const {bookClicked, goToTopRatedPage, topRatedBooks} = props;
+    const {
+        bookClicked,
+        goToTopRatedPage,
+        topRatedBooks
+    } = props;
 
     return(
         <section className={`db-section ${ classes.TopRated }`}>

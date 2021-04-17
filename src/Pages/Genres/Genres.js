@@ -1,16 +1,16 @@
 import React from 'react';
 import DynamicPage from "../../Shared/DynamicPage/DynamicPage";
-import data from '../../data.json'
 
-class Genres extends React.Component{
+const genres = (props) => {
+    const {
+        books
+    } = props
 
-    render() {
-        return (
-            <div>
-                <DynamicPage books={data.books}/>
-            </div>
-        );
-    }
+    return (
+        <div>
+            <DynamicPage books={books}/>
+        </div>
+    );
 }
 
-export default Genres;
+export default genres;
