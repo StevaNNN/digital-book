@@ -1,23 +1,54 @@
 import data from "./data.json";
-export const ALL_GENRES = [];
-export const ALl_LANGUAGES = [];
-export const ALL_TITLES = [];
+export let ALL_GENRES = [];
+export let ALl_LANGUAGES = [];
+export let ALL_TITLES = [];
 
 export const genrePicker = (genre) => {
-    let topRatedBooksArray = [];
+    let tempArr = [];
     data.books.forEach(book => {
         if(book.genres.includes(genre)) {
-            topRatedBooksArray.push(book)
+            tempArr.push(book)
         }
     })
-    return topRatedBooksArray;
+    return tempArr;
 }
 
 const collectAllGenres = () => {
-    data.books.forEach(book => {
+    let books = data.books;
+    let genresThatMather  = [];
+
+    books.forEach(book => {
         book.genres.forEach(genre => {
             if(!ALL_GENRES.includes(genre)) {
-                ALL_GENRES.push(genre)
+                switch (genre) {
+                    case 'Young-Adult':
+                        return genresThatMather.push(genre)
+                    case 'Romance':
+                        return genresThatMather.push(genre)
+                    case 'Mystery':
+                        return genresThatMather.push(genre)
+                    case "Children":
+                        return genresThatMather.push(genre)
+                    case 'History':
+                        return genresThatMather.push(genre)
+                    case 'Horror':
+                        return genresThatMather.push(genre)
+                    case 'Fantasy':
+                        return genresThatMather.push(genre)
+                    case 'Fiction':
+                        return genresThatMather.push(genre)
+                    case 'Classics':
+                        return genresThatMather.push(genre)
+                    case 'SciFi':
+                        return genresThatMather.push(genre)
+                    case 'Top-Rated':
+                        return genresThatMather.push(genre)
+                    case 'Trending':
+                        return genresThatMather.push(genre)
+                    default:
+                        break;
+                }
+                ALL_GENRES = genresThatMather;
             }
         });
     });

@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import BookCard from "../../Components/BookCard/BookCard";
-import {ALL_GENRES} from "../../Util";
+import classes from './DynamicPage.module.scss';
 
 class DynamicPage extends Component{
 
@@ -17,12 +17,13 @@ class DynamicPage extends Component{
     }
 
     componentDidUpdate(prevProps, prevState, snapshot) {
-        if(prevProps.books !== this.props.books) {
+        if(prevProps !== this.props) {
             this.setState({
                 arrayOfBooks: this.props.books
             })
         }
     }
+
 
     onBookClick = (book) => {
         this.setState({
@@ -31,7 +32,16 @@ class DynamicPage extends Component{
     }
 
     render() {
-        const { arrayOfBooks } = this.state;
+        const {arrayOfBooks} = this.state;
+        const {extra} = this.props;
+
+        let formatedPageTitle;
+        if(this.props.match.path !== '/genres') {
+            formatedPageTitle = this.props.match.path.substring(1).toUpperCase() + ' BOOKS';
+        } else {
+            formatedPageTitle = 'BOOKS BY ' + this.props.match.path.substring(1).toUpperCase();
+        }
+
         let renderBooks = arrayOfBooks && arrayOfBooks.map((book, index) => {
             return(
                 <BookCard
@@ -41,13 +51,49 @@ class DynamicPage extends Component{
                     src={book.thumbnail}
                     onClick={this.onBookClick}
                 />
+            );
+        });
+
+        let renderBooksByGenre = arrayOfBooks && extra && arrayOfBooks.map((bookGenre, index) => {
+            return (
+                <div className={classes.Row} key={index}>
+                    <h1>{bookGenre[bookGenre.length - 1]}</h1>
+                    <div className={classes.BooksWrap}>
+                        {bookGenre.map((book, index) => {
+                            return (
+                                <div
+                                    className={classes.Book}
+                                    key={index}
+                                >
+                                    <BookCard
+                                        alt={book.title}
+                                        genres={book.genres}
+                                        src={book.thumbnail}
+                                        onClick={this.onBookClick}
+                                    />
+                                </div>
+                            );
+                        })}
+                    </div>
+                </div>
             )
         });
 
         return (
-            <div className={'db-book-card'}>
-                {renderBooks}
-                {ALL_GENRES.map(genre => genre)}
+            <div>
+                {extra ?
+                    <>
+                        <h1>{formatedPageTitle}</h1>
+                        {renderBooksByGenre}
+                    </>
+                    :
+                    <>
+                        <h1>{formatedPageTitle}</h1>
+                        <div className={classes.Book}>
+                            {renderBooks}
+                        </div>
+                    </>
+                }
             </div>
         );
     }

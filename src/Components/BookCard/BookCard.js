@@ -12,8 +12,16 @@ const bookCard = (props) => {
     } = props;
 
     return(
-        <div onClick={onClick} className={classes.BookCard} tabIndex={0}>
-            <img src={src} alt={alt} className={classes.BookThumb}/>
+        <div
+            onClick={onClick}
+            className={classes.BookCard}
+            tabIndex={0}
+        >
+            <img
+                src={src}
+                alt={alt}
+                className={classes.BookThumb}
+            />
             {genres && <>
                 <div className={classes.BookGenres}>
                     {genres.map((genre, index) => {

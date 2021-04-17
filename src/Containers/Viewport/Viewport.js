@@ -9,7 +9,7 @@ import Genres from "../../Pages/Genres/Genres";
 import Languages from "../../Pages/Languages/Languages";
 import Footer from "../../Shared/Footer/Footer";
 import About from "../../Pages/About/About";
-import {genrePicker} from "../../Util";
+import {genrePicker, ALL_GENRES} from "../../Util";
 
 class Viewport extends React.Component {
 
@@ -17,13 +17,23 @@ class Viewport extends React.Component {
         backDropActive: false,
         scrollInto: '',
         trendingBooks: [],
-        topRatedBooks: []
+        topRatedBooks: [],
+        booksByGenre: [],
+        booksByLanguage: []
     }
 
     componentDidMount() {
         this.setState({
             trendingBooks: genrePicker('Trending'),
             topRatedBooks: genrePicker('Top-Rated')
+        });
+        let arrayOfBookByGenre = [];
+
+        ALL_GENRES.map(genre => {
+            arrayOfBookByGenre.push(genrePicker(genre).concat(genre));
+        });
+        this.setState({
+            booksByGenre: arrayOfBookByGenre
         })
     }
 
@@ -48,7 +58,9 @@ class Viewport extends React.Component {
         const {
             backDropActive,
             topRatedBooks,
-            trendingBooks
+            trendingBooks,
+            booksByGenre,
+            booksByLanguage
         } = this.state;
 
         return(
@@ -88,7 +100,10 @@ class Viewport extends React.Component {
                             path={'/genres'}
                             render={(routeProps) => {
                                 return(
-                                    <Genres {...routeProps}/>
+                                    <Genres
+                                        {...routeProps}
+                                        books={booksByGenre}
+                                    />
                                 )
                             }}
                         />
@@ -96,7 +111,10 @@ class Viewport extends React.Component {
                             path={'/languages'}
                             render={(routeProps)=> {
                                 return(
-                                    <Languages {...routeProps}/>
+                                    <Languages
+                                        {...routeProps}
+                                        books={booksByLanguage}
+                                    />
                                 )
                             }}
                         />

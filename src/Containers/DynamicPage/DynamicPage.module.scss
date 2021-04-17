@@ -1,0 +1,17 @@
+.Book {
+    width: 30rem;
+
+    &:last-of-type {
+        display: none;
+    }
+}
+
+.Row {
+    display: flex;
+    flex-direction: column;
+}
+
+.BooksWrap {
+    display: flex;
+    flex-wrap: wrap;
+}

@@ -4,11 +4,15 @@ import DynamicPage from "../../Containers/DynamicPage/DynamicPage";
 const genres = (props) => {
     const {
         books
-    } = props
+    } = props;
 
     return (
         <div>
-            <DynamicPage books={books} genrePage/>
+            <DynamicPage
+                {...props}
+                extra
+                books={books}
+            />
         </div>
     );
 }

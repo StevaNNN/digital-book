@@ -6,7 +6,10 @@ const topRated = (props) => {
 
     return (
         <div>
-            <DynamicPage books={books}/>
+            <DynamicPage
+                {...props}
+                books={books}
+            />
         </div>
     );
 }
