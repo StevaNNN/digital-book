@@ -13,7 +13,10 @@ const trending = props => {
                     <h1>Trending books</h1>
                     <Button onClick={goToTrendingPage}>More</Button>
                 </div>
-                <SliderAbstract books={trendingBooks} bookClicked={bookClicked} />
+                <SliderAbstract
+                    books={trendingBooks}
+                    bookClicked={bookClicked}
+                />
             </div>
         </section>
     );

@@ -46,7 +46,6 @@ const sliderAbstract = (props) => {
                 src={book.thumbnail}
                 alt={book.title}
                 key={index}
-                genres={book.genres}
             />
         )
     })

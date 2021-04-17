@@ -17,7 +17,10 @@ const topRated = props => {
                     <h1>Top rated books</h1>
                     <Button onClick={goToTopRatedPage}>More</Button>
                 </div>
-                <SliderAbstract books={topRatedBooks} bookClicked={bookClicked} />
+                <SliderAbstract
+                    books={topRatedBooks}
+                    bookClicked={bookClicked}
+                />
             </div>
         </section>
     );

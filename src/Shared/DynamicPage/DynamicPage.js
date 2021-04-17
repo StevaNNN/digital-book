@@ -9,10 +9,18 @@ class DynamicPage extends Component{
     }
 
 
-    componentDidUpdate() {
+    componentDidMount() {
         this.setState({
             arrayOfBooks: this.props.books
         })
+    }
+
+    componentDidUpdate(prevProps, prevState, snapshot) {
+        if(prevProps.books !== this.props.books) {
+            this.setState({
+                arrayOfBooks: this.props.books
+            })
+        }
     }
 
     onBookClick = (book) => {

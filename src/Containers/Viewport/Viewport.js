@@ -45,7 +45,11 @@ class Viewport extends React.Component {
     }
 
     render() {
-        const {backDropActive} = this.state;
+        const {
+            backDropActive,
+            topRatedBooks,
+            trendingBooks
+        } = this.state;
 
         return(
             <>
@@ -60,27 +64,61 @@ class Viewport extends React.Component {
                     <Switch>
                         <Route
                             path={'/top-rated'}
-                            render={(routeProps) => <TopRated {...routeProps} books={this.state.topRatedBooks}/>}
+                            render={(routeProps) => {
+                                return(
+                                    <TopRated
+                                        {...routeProps}
+                                        books={topRatedBooks}
+                                    />
+                                )
+                            }}
                         />
                         <Route
                             path={'/trending'}
-                            render={() => <Trending/>}
+                            render={(routeProps) => {
+                                return(
+                                    <Trending
+                                        {...routeProps}
+                                        books={trendingBooks}
+                                    />
+                                )
+                            }}
                         />
                         <Route
                             path={'/genres'}
-                            render={() => <Genres/>}
+                            render={(routeProps) => {
+                                return(
+                                    <Genres {...routeProps}/>
+                                )
+                            }}
                         />
                         <Route
                             path={'/languages'}
-                            render={()=> <Languages/>}
+                            render={(routeProps)=> {
+                                return(
+                                    <Languages {...routeProps}/>
+                                )
+                            }}
                         />
                         <Route
                             path={'/about'}
-                            render={() => <About/>}
+                            render={(routeProps) => {
+                                return(
+                                    <About {...routeProps} />
+                                )
+                            }}
                         />
                         <Route
                             path={"/"}
-                            render={(routeProps) => <Home {...routeProps}/>}
+                            render={(routeProps) => {
+                                return(
+                                    <Home
+                                        {...routeProps}
+                                        topRatedBooks={topRatedBooks}
+                                        trendingBooks={trendingBooks}
+                                    />
+                                )
+                            }}
                         />
                     </Switch>
                 </main>

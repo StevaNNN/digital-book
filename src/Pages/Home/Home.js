@@ -5,23 +5,13 @@ import Trending from "./Trending/Trending";
 import Genres from "./Genres/Genres";
 import Languages from "./Languages/Languages";
 import Dialog from "../../Components/UI/Dialog/Dialog";
-import {genrePicker} from "../../Util";
 import WhatPeopleSay from "./WhatPeopleSay/WhatPeopleSay";
 
 class Home extends Component {
-    // genreRef;
+
     state = {
         modalOpened: false,
-        selectedBook: {},
-        trendingBooks: [],
-        topRatedBooks: []
-    }
-
-    componentDidMount() {
-        this.setState({
-            trendingBooks: genrePicker('Trending'),
-            topRatedBooks: genrePicker('Top-Rated')
-        })
+        selectedBook: {}
     }
 
     changeToTopRated = () => this.props.history.push('/top-rated');
@@ -30,15 +20,17 @@ class Home extends Component {
     changeToLang = (item) => this.props.history.push('/' + item.toLowerCase())
 
     topRatedBookClicked = (index) => {
+        const {topRatedBooks} = this.props;
         this.setState({
-            selectedBook: this.state.topRatedBooks[index],
+            selectedBook: topRatedBooks[index],
             modalOpened: true
         })
     }
 
     trendingBookClicked = (index) => {
+        const {trendingBooks} = this.props;
         this.setState({
-            selectedBook: this.state.trendingBooks[index],
+            selectedBook: trendingBooks[index],
             modalOpened: true
         })
     }
@@ -48,13 +40,14 @@ class Home extends Component {
 
     render() {
         const {
-            topRatedBooks,
-            trendingBooks,
             modalOpened,
             selectedBook
         } = this.state;
 
-        console.log(this.props)
+        const {
+            topRatedBooks,
+            trendingBooks
+        } = this.props
 
         return (
             <>
