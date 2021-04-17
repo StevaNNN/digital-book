@@ -1,6 +1,8 @@
 .Book {
     width: 30rem;
+}
 
+.BooksByGenre {
     &:last-of-type {
         display: none;
     }

@@ -8,7 +8,8 @@ const bookCard = (props) => {
         genres,
         onClick,
         src,
-        alt
+        alt,
+        title
     } = props;
 
     return(
@@ -23,6 +24,7 @@ const bookCard = (props) => {
                 className={classes.BookThumb}
             />
             {genres && <>
+                <div>{title}</div>
                 <div className={classes.BookGenres}>
                     {genres.map((genre, index) => {
                         return(

@@ -29,6 +29,8 @@ class DynamicPage extends Component{
         this.setState({
             selectedBook: book
         })
+
+        console.log(this.state.selectedBook)
     }
 
     render() {
@@ -42,14 +44,20 @@ class DynamicPage extends Component{
             formatedPageTitle = 'BOOKS BY ' + this.props.match.path.substring(1).toUpperCase();
         }
 
+        let bookClasses = [classes.Book];
+        if(extra) {
+            bookClasses = [...bookClasses, classes.BooksByGenre]
+        }
+
         let renderBooks = arrayOfBooks && arrayOfBooks.map((book, index) => {
             return(
                 <BookCard
                     key={index}
                     alt={book.title}
                     genres={book.genres}
+                    title={book.title}
                     src={book.thumbnail}
-                    onClick={this.onBookClick}
+                    onClick={this.onBookClick.bind(this, book)}
                 />
             );
         });
@@ -62,14 +70,15 @@ class DynamicPage extends Component{
                         {bookGenre.map((book, index) => {
                             return (
                                 <div
-                                    className={classes.Book}
+                                    className={bookClasses.join(' ')}
                                     key={index}
                                 >
                                     <BookCard
                                         alt={book.title}
                                         genres={book.genres}
+                                        title={book.title}
                                         src={book.thumbnail}
-                                        onClick={this.onBookClick}
+                                        onClick={this.onBookClick.bind(this, book)}
                                     />
                                 </div>
                             );

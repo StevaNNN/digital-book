@@ -30,7 +30,7 @@ class Viewport extends React.Component {
         let arrayOfBookByGenre = [];
 
         ALL_GENRES.map(genre => {
-            arrayOfBookByGenre.push(genrePicker(genre).concat(genre));
+            return arrayOfBookByGenre.push(genrePicker(genre).concat(genre));
         });
         this.setState({
             booksByGenre: arrayOfBookByGenre
@@ -62,6 +62,7 @@ class Viewport extends React.Component {
             booksByGenre,
             booksByLanguage
         } = this.state;
+
 
         return(
             <>
