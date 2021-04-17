@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import BookCard from "../../Components/BookCard/BookCard";
+import {ALL_GENRES} from "../../Util";
 
 class DynamicPage extends Component{
 
@@ -46,6 +47,7 @@ class DynamicPage extends Component{
         return (
             <div className={'db-book-card'}>
                 {renderBooks}
+                {ALL_GENRES.map(genre => genre)}
             </div>
         );
     }

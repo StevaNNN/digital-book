@@ -1,5 +1,5 @@
 import React from 'react';
-import DynamicPage from "../../Shared/DynamicPage/DynamicPage";
+import DynamicPage from "../../Containers/DynamicPage/DynamicPage";
 
 const trending = (props) => {
     const {

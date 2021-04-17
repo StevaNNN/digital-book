@@ -3,7 +3,7 @@ import {Route, Switch} from "react-router-dom";
 import Header from '../../Components/Navigation/Header/Header';
 import SideDrawer from '../../Components/Navigation/SideDrawer/SideDrawer';
 import TopRated from "../../Pages/TopRated/TopRated";
-import Home from '../../Pages/Home/Home';
+import Home from '../Home/Home';
 import Trending from "../../Pages/Trending/Trending";
 import Genres from "../../Pages/Genres/Genres";
 import Languages from "../../Pages/Languages/Languages";

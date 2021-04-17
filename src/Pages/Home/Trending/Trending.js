@@ -4,7 +4,11 @@ import classes from './Trending.module.scss';
 import Button from "../../../Components/UI/Button/Button";
 
 const trending = props => {
-    const {bookClicked, goToTrendingPage, trendingBooks} = props;
+    const {
+        bookClicked,
+        goToTrendingPage,
+        trendingBooks
+    } = props;
 
     return(
         <section className={`db-section ${classes.Trending}`}>

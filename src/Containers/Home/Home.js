@@ -1,11 +1,11 @@
 import React, {Component} from 'react';
-import Intro from "./Intro/Intro";
-import TopRated from "./TopRated/TopRated";
-import Trending from "./Trending/Trending";
-import Genres from "./Genres/Genres";
-import Languages from "./Languages/Languages";
+import Hero from "../Hero/Hero";
+import TopRated from "../../Pages/Home/TopRated/TopRated";
+import Trending from "../../Pages/Home/Trending/Trending";
+import Genres from "../../Pages/Home/Genres/Genres";
+import Languages from "../../Pages/Home/Languages/Languages";
 import Dialog from "../../Components/UI/Dialog/Dialog";
-import WhatPeopleSay from "./WhatPeopleSay/WhatPeopleSay";
+import WhatPeopleSay from "../../Pages/Home/WhatPeopleSay/WhatPeopleSay";
 
 class Home extends Component {
 
@@ -51,7 +51,7 @@ class Home extends Component {
 
         return (
             <>
-                <Intro />
+                <Hero />
                 <TopRated
                     topRatedBooks={topRatedBooks}
                     goToTopRatedPage={this.changeToTopRated}

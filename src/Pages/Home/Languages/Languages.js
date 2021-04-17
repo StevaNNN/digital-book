@@ -3,8 +3,10 @@ import React from 'react';
 import {ALl_LANGUAGES} from "../../../Util";
 import GenreLangCard from "../../../Components/GenreLangCard/GenreLangCard";
 
-const languages = (props) => {
-    const {goToSpecificLanguage} = props;
+const languages = props => {
+    const {
+        goToSpecificLanguage
+    } = props;
 
     return(
         <section className={`db-section`}>

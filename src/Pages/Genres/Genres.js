@@ -1,5 +1,5 @@
 import React from 'react';
-import DynamicPage from "../../Shared/DynamicPage/DynamicPage";
+import DynamicPage from "../../Containers/DynamicPage/DynamicPage";
 
 const genres = (props) => {
     const {
@@ -8,7 +8,7 @@ const genres = (props) => {
 
     return (
         <div>
-            <DynamicPage books={books}/>
+            <DynamicPage books={books} genrePage/>
         </div>
     );
 }

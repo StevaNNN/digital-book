@@ -7,7 +7,7 @@ import {formatArrayBy} from "../../../Util";
 const genres = React.forwardRef((props, ref) => {
     const {goToSpecificGenre} = props;
     const genresThatMather = [];
-
+    // TODO migrate this ti ALL_GENRES in UTIl.js so we have always acces to only ones that matther
     ALL_GENRES.forEach(genre => {
         switch (genre) {
             case 'Young-Adult':

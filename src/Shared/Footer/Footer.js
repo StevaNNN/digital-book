@@ -4,7 +4,7 @@ import SocialBar from "../../Components/SocialBar/SocialBar";
 import NavigationItems from "../../Components/Navigation/NavigationItems/NavigationItems";
 import Logo from "../../Components/Logo/Logo";
 
-const footer = (props) => {
+const footer = props => {
     const {
         onClickScroll
     } = props;

@@ -1,7 +1,7 @@
 import React from 'react';
 import classes from './WhatPeopleSay.module.scss';
 
-const whatPeopeleSay = (props) => {
+const whatPeopeleSay = props => {
 
     return(
         <section className={`db-section`}>

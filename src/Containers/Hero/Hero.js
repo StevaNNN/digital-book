@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import classes from './Intro.module.scss';
-import Button from "../../../Components/UI/Button/Button";
-import {ALL_TITLES} from "../../../Util";
-import data from '../../../data.json';
+import classes from './Hero.module.scss';
+import Button from "../../Components/UI/Button/Button";
+import {ALL_TITLES} from "../../Util";
+import data from '../../data.json';
 
-class Intro extends Component {
+class Hero extends Component {
 
     state = {
         searchedTerm: '',
@@ -62,4 +62,4 @@ class Intro extends Component {
     }
 }
 
-export default Intro;
+export default Hero;
