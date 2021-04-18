@@ -10,6 +10,7 @@ import Languages from "../../Pages/Languages/Languages";
 import Footer from "../../Shared/Footer/Footer";
 import About from "../../Pages/About/About";
 import {genrePicker, ALL_GENRES} from "../../Util";
+import AbstractPage from "../../Pages/AbstractPage/AbstractPage";
 
 class Viewport extends React.Component {
 
@@ -27,6 +28,11 @@ class Viewport extends React.Component {
             trendingBooks: genrePicker('Trending'),
             topRatedBooks: genrePicker('Top-Rated')
         });
+
+        this.collectBooksByGenre();
+    }
+
+    collectBooksByGenre = () => {
         let arrayOfBookByGenre = [];
 
         ALL_GENRES.map(genre => {
@@ -63,7 +69,6 @@ class Viewport extends React.Component {
             booksByLanguage
         } = this.state;
 
-
         return(
             <>
                 <Header clicked={this.openBackdrop}/>
@@ -99,11 +104,33 @@ class Viewport extends React.Component {
                         />
                         <Route
                             path={'/genres'}
+                            exact
                             render={(routeProps) => {
                                 return(
                                     <Genres
                                         {...routeProps}
                                         books={booksByGenre}
+                                    />
+                                )
+                            }}
+                        />
+                        <Route
+                            path={'/specific-genre/:genre'}
+                            render={(routeProps) => {
+                                return(
+                                    <AbstractPage
+                                        {...routeProps}
+                                        genre
+                                    />
+                                )
+                            }}
+                        />
+                        <Route
+                            path={'/specific-language/:lang'}
+                            render={(routeProps) => {
+                                return(
+                                    <AbstractPage
+                                        {...routeProps}
                                     />
                                 )
                             }}

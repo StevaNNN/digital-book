@@ -13,6 +13,16 @@ export const genrePicker = (genre) => {
     return tempArr;
 }
 
+export const langPicker = (lang) => {
+    let tempArr = [];
+    data.books.forEach(book => {
+        if(book.language.includes(lang)) {
+            tempArr.push(book)
+        }
+    })
+    return tempArr;
+}
+
 const collectAllGenres = () => {
     let books = data.books;
     let genresThatMather  = [];

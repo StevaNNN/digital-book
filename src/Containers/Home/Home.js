@@ -12,13 +12,14 @@ class Home extends Component {
 
     state = {
         modalOpened: false,
-        selectedBook: {}
+        selectedBook: {},
+        specificGenreBooks: []
     }
 
     changeToTopRated = () => this.props.history.push('/top-rated');
     changeToTrending = () => this.props.history.push('/trending');
-    changeToGenre = (item) => this.props.history.push('/' + item.toLowerCase())
-    changeToLang = (item) => this.props.history.push('/' + item.toLowerCase())
+    changeToGenre = (item) => this.props.history.push('/specific-genre/' + item);
+    changeToLang = (item) => this.props.history.push('/specific-language/' + item);
 
     topRatedBookClicked = (index) => {
         const {topRatedBooks} = this.props;
@@ -49,6 +50,8 @@ class Home extends Component {
             topRatedBooks,
             trendingBooks
         } = this.props
+
+        console.log(this.state)
 
         return (
             <>
