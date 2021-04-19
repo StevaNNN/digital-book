@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import Hero from "../Hero/Hero";
+import Hero from "../../Pages/Home/Hero/Hero";
 import TopRated from "../../Pages/Home/TopRated/TopRated";
 import Trending from "../../Pages/Home/Trending/Trending";
 import Genres from "../../Pages/Home/Genres/Genres";
@@ -7,21 +7,27 @@ import Languages from "../../Pages/Home/Languages/Languages";
 import Dialog from "../../Components/UI/Dialog/Dialog";
 import WhatPeopleSay from "../../Pages/Home/WhatPeopleSay/WhatPeopleSay";
 import BookInDialog from '../../Shared/BookInDialog/BookInDialog';
+import data from '../../data.json';
 
 class Home extends Component {
 
     state = {
         modalOpened: false,
         selectedBook: {},
-        specificGenreBooks: []
+        specificGenreBooks: [],
+        specificLangBooks: [],
+        searchedTerm: '',
+        searchedBook: {}
     }
 
     changeToTopRated = () => this.props.history.push('/top-rated');
     changeToTrending = () => this.props.history.push('/trending');
-    changeToGenre = (item) => this.props.history.push('/specific-genre/' + item);
-    changeToLang = (item) => this.props.history.push('/specific-language/' + item);
+    changeToGenre = (item) => this.props.history.push({pathname: '/genre', search: '?=' + item });
+    changeToLang = (item) => this.props.history.push({pathname: '/language', search: '?=' + item});
+    changeToBook = () => this.props.history.push({pathname: '/book', search: '?=' + this.state.searchedBook.title});
+    onSearchBtnClick = (term) => term && this.props.history.push({pathname: '/book', search: '?=' + term});
 
-    topRatedBookClicked = (index) => {
+    topRatedBookClicked = index => {
         const {topRatedBooks} = this.props;
         this.setState({
             selectedBook: topRatedBooks[index],
@@ -29,7 +35,7 @@ class Home extends Component {
         })
     }
 
-    trendingBookClicked = (index) => {
+    trendingBookClicked = index => {
         const {trendingBooks} = this.props;
         this.setState({
             selectedBook: trendingBooks[index],
@@ -40,10 +46,28 @@ class Home extends Component {
     closeModal = () => this.setState({modalOpened: false});
 
 
+    onSearchTerm = event => {
+        this.setState({
+            searchedTerm: event.target.value
+        })
+    }
+
+    onRecordClick = title => {
+        data.books.forEach(book => {
+            if(book.title === title)  {
+                this.setState({
+                    searchedBook: book
+                }, this.changeToBook)
+            }
+        })
+    }
+
     render() {
         const {
             modalOpened,
-            selectedBook
+            selectedBook,
+            searchedTerm,
+            searchedBook
         } = this.state;
 
         const {
@@ -51,11 +75,15 @@ class Home extends Component {
             trendingBooks
         } = this.props
 
-        console.log(this.state)
-
         return (
             <>
-                <Hero />
+                <Hero 
+                    searchedTerm={searchedTerm}
+                    searchedBook={searchedBook}
+                    onSearchBtnClick={() => this.onSearchBtnClick(searchedTerm)}
+                    onRecordClick={this.onRecordClick}
+                    onSearchTerm={this.onSearchTerm}
+                />
                 <TopRated
                     topRatedBooks={topRatedBooks}
                     goToTopRatedPage={this.changeToTopRated}

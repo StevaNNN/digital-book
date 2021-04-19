@@ -1,14 +1,14 @@
 import React from 'react';
-import DynamicPage from "../../Containers/DynamicPage/DynamicPage";
+import BookLists from "../../Containers/BookLists/BookLists";
 
-const trending = (props) => {
+const trending = props => {
     const {
         books
     } = props
 
     return (
         <div>
-            <DynamicPage
+            <BookLists
                 {...props}
                 books={books}
             />

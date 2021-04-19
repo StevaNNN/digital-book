@@ -1,14 +1,18 @@
 import React from 'react';
-import DynamicPage from "../../Containers/DynamicPage/DynamicPage";
+import BookLists from "../../Containers/BookLists/BookLists";
 
-const languages = (props) =>{
+const languages = props => {
+
     const {
         books
     } = props
 
     return (
         <div>
-            <DynamicPage books={books}/>
+            <BookLists
+                {...props}
+                books={books}
+            />
         </div>
     );
 }

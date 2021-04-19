@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import BookCard from "../../Components/BookCard/BookCard";
-import classes from './DynamicPage.module.scss';
+import classes from './BookLists.module.scss';
 
 class DynamicPage extends Component{
 
@@ -16,7 +16,7 @@ class DynamicPage extends Component{
         })
     }
 
-    componentDidUpdate(prevProps, prevState, snapshot) {
+    componentDidUpdate(prevProps) {
         if(prevProps !== this.props) {
             this.setState({
                 arrayOfBooks: this.props.books
@@ -36,20 +36,17 @@ class DynamicPage extends Component{
     }
 
     render() {
-        const {arrayOfBooks} = this.state;
-        const {extra} = this.props;
+        
+        const {
+            arrayOfBooks
+        } = this.state;
+
+        const {
+            extra
+        } = this.props;
 
         let formatedPageTitle;
-        if(this.props.match.path !== '/genres') {
-            formatedPageTitle = this.props.match.path.substring(1).toUpperCase() + ' BOOKS';
-        } else {
-            formatedPageTitle = 'BOOKS BY ' + this.props.match.path.substring(1).toUpperCase();
-        }
-
         let bookClasses = [classes.Book];
-        if(extra) {
-            bookClasses = [...bookClasses, classes.BooksByGenre]
-        }
 
         let renderBooks = arrayOfBooks && arrayOfBooks.map((book, index) => {
             return(
@@ -64,6 +61,16 @@ class DynamicPage extends Component{
                 />
             );
         });
+
+        if(this.props.match.path !== '/genres') {
+            formatedPageTitle = this.props.match.path.substring(1).toUpperCase() + ' BOOKS';
+        } else {
+            formatedPageTitle = 'BOOKS BY ' + this.props.match.path.substring(1).toUpperCase();
+        }
+
+        if(extra) {
+            bookClasses = [...bookClasses, classes.BooksByGenre]
+        }
 
         let renderBooksByGenre = arrayOfBooks && extra && arrayOfBooks.map((bookGenre, index) => {
             return (

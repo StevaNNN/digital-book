@@ -10,7 +10,7 @@ import Languages from "../../Pages/Languages/Languages";
 import Footer from "../../Shared/Footer/Footer";
 import About from "../../Pages/About/About";
 import {genrePicker, ALL_GENRES} from "../../Util";
-import AbstractPage from "../../Pages/AbstractPage/AbstractPage";
+import AbstractPage from "../AbstractPage/AbstractPage";
 
 class Viewport extends React.Component {
 
@@ -54,12 +54,6 @@ class Viewport extends React.Component {
         })
     }
 
-    onClickScroll = (e) => {
-        this.setState({
-            scrollInto: e.target.innerHTML
-        })
-    }
-
     render() {
         const {
             backDropActive,
@@ -71,7 +65,9 @@ class Viewport extends React.Component {
 
         return(
             <>
-                <Header clicked={this.openBackdrop}/>
+                <Header 
+                clicked={this.openBackdrop}
+                />
                 <SideDrawer
                     opened={backDropActive}
                     backDropUp={backDropActive}
@@ -87,6 +83,17 @@ class Viewport extends React.Component {
                                     <TopRated
                                         {...routeProps}
                                         books={topRatedBooks}
+                                    />
+                                )
+                            }}
+                        />
+                        <Route
+                            path={'/book'}
+                            render={(routeProps) => {
+                                return(
+                                    <AbstractPage
+                                        {...routeProps}
+                                        book
                                     />
                                 )
                             }}
@@ -115,7 +122,7 @@ class Viewport extends React.Component {
                             }}
                         />
                         <Route
-                            path={'/specific-genre/:genre'}
+                            path={'/genre'}
                             render={(routeProps) => {
                                 return(
                                     <AbstractPage
@@ -126,7 +133,7 @@ class Viewport extends React.Component {
                             }}
                         />
                         <Route
-                            path={'/specific-language/:lang'}
+                            path={'/language'}
                             render={(routeProps) => {
                                 return(
                                     <AbstractPage
@@ -168,7 +175,7 @@ class Viewport extends React.Component {
                         />
                     </Switch>
                 </main>
-                <Footer onClickScroll={this.onClickScroll}/>
+                <Footer />
             </>
         );
     }

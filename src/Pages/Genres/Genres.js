@@ -1,14 +1,14 @@
 import React from 'react';
-import DynamicPage from "../../Containers/DynamicPage/DynamicPage";
+import BookLists from "../../Containers/BookLists/BookLists";
 
-const genres = (props) => {
+const genres = props => {
     const {
         books
     } = props;
 
     return (
         <div>
-            <DynamicPage
+            <BookLists
                 {...props}
                 extra
                 books={books}

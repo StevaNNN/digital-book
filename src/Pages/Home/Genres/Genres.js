@@ -3,7 +3,8 @@ import GenreLangCard from "../../../Components/GenreLangCard/GenreLangCard";
 import {ALL_GENRES} from '../../../Util.js';
 import {formatArrayBy} from "../../../Util";
 
-const genres = React.forwardRef((props, ref) => {
+const genres = props => {
+    
     const {
         goToSpecificGenre
     } = props;
@@ -33,6 +34,6 @@ const genres = React.forwardRef((props, ref) => {
             </div>
         </section>
     )
-});
+};
 
 export default genres;

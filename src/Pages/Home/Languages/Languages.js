@@ -4,6 +4,7 @@ import {ALl_LANGUAGES} from "../../../Util";
 import GenreLangCard from "../../../Components/GenreLangCard/GenreLangCard";
 
 const languages = props => {
+    
     const {
         goToSpecificLanguage
     } = props;

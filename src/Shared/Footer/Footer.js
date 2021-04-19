@@ -5,10 +5,7 @@ import NavigationItems from "../../Components/Navigation/NavigationItems/Navigat
 import Logo from "../../Components/Logo/Logo";
 
 const footer = props => {
-    const {
-        onClickScroll
-    } = props;
-
+    
     return(
        <>
            <footer className={`db-section ${classes.Footer}`}>
@@ -18,9 +15,7 @@ const footer = props => {
                    </div>
                    <div className={classes.FooterGroup}>
                        <h3 className={classes.heading}>WebApp Navigation</h3>
-                       <NavigationItems footer/>
-                       <button onClick={(event) => onClickScroll(event)} className={classes.Button}>Genre</button>
-                       <button onClick={(event) => onClickScroll(event)} className={classes.Button}>Languages</button>
+                       <NavigationItems footer />
                    </div>
                    <div className={classes.FooterGroup}>
                        <h3>Social network links</h3>

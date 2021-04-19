@@ -82,6 +82,35 @@ const collectAllTitles = () => {
     });
 }
 
+export const collectByTerm = (term) => {
+    let tempArr = [];
+
+    data.books.forEach(book => {
+        const bookObjKeys = Object.keys(book);
+
+        bookObjKeys.forEach(key => {
+            switch(key) {
+                case 'title':
+                    return book[key].includes(term) ? tempArr.push(book) : null;
+                    break;
+                case 'author':
+                    return book[key].includes(term) ? tempArr.push(book) : null;
+                    break
+                case 'genres':
+                    return book[key].filter(item => item.includes(term) ? tempArr.push(book) : null);
+                    break;
+                case 'language':
+                    return book[key].filter(item => item.includes(term) ? tempArr.push(book) : null);
+                    break;
+                default:
+                    break;
+            }
+        })
+    })
+
+    return tempArr;
+}
+
 collectAllGenres();
 collectAllLangs();
 collectAllTitles();
