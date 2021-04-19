@@ -1,27 +1,27 @@
 {
   "files": {
-    "main.css": "/static/css/main.84c4f7fc.chunk.css",
-    "main.js": "/static/js/main.202416f9.chunk.js",
-    "main.js.map": "/static/js/main.202416f9.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.8af97bb7.js",
-    "runtime-main.js.map": "/static/js/runtime-main.8af97bb7.js.map",
-    "static/css/2.683d83cf.chunk.css": "/static/css/2.683d83cf.chunk.css",
-    "static/js/2.616c9d2f.chunk.js": "/static/js/2.616c9d2f.chunk.js",
-    "static/js/2.616c9d2f.chunk.js.map": "/static/js/2.616c9d2f.chunk.js.map",
-    "index.html": "/index.html",
-    "static/css/2.683d83cf.chunk.css.map": "/static/css/2.683d83cf.chunk.css.map",
-    "static/css/main.84c4f7fc.chunk.css.map": "/static/css/main.84c4f7fc.chunk.css.map",
-    "static/js/2.616c9d2f.chunk.js.LICENSE.txt": "/static/js/2.616c9d2f.chunk.js.LICENSE.txt",
-    "static/media/main.scss": "/static/media/trending.0d681025.svg",
-    "static/media/SocialBar.module.scss": "/static/media/twitter.f0e3d69b.svg",
-    "static/media/Hero.module.scss": "/static/media/hero.615ed173.svg",
-    "static/media/logo.04639a1c.svg": "/static/media/logo.04639a1c.svg"
+    "main.css": "/digital-book/static/css/main.8dca5eb7.chunk.css",
+    "main.js": "/digital-book/static/js/main.202416f9.chunk.js",
+    "main.js.map": "/digital-book/static/js/main.202416f9.chunk.js.map",
+    "runtime-main.js": "/digital-book/static/js/runtime-main.a6f2d970.js",
+    "runtime-main.js.map": "/digital-book/static/js/runtime-main.a6f2d970.js.map",
+    "static/css/2.8c0c24c4.chunk.css": "/digital-book/static/css/2.8c0c24c4.chunk.css",
+    "static/js/2.616c9d2f.chunk.js": "/digital-book/static/js/2.616c9d2f.chunk.js",
+    "static/js/2.616c9d2f.chunk.js.map": "/digital-book/static/js/2.616c9d2f.chunk.js.map",
+    "index.html": "/digital-book/index.html",
+    "static/css/2.8c0c24c4.chunk.css.map": "/digital-book/static/css/2.8c0c24c4.chunk.css.map",
+    "static/css/main.8dca5eb7.chunk.css.map": "/digital-book/static/css/main.8dca5eb7.chunk.css.map",
+    "static/js/2.616c9d2f.chunk.js.LICENSE.txt": "/digital-book/static/js/2.616c9d2f.chunk.js.LICENSE.txt",
+    "static/media/main.scss": "/digital-book/static/media/trending.0d681025.svg",
+    "static/media/SocialBar.module.scss": "/digital-book/static/media/twitter.f0e3d69b.svg",
+    "static/media/Hero.module.scss": "/digital-book/static/media/hero.615ed173.svg",
+    "static/media/logo.04639a1c.svg": "/digital-book/static/media/logo.04639a1c.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.8af97bb7.js",
-    "static/css/2.683d83cf.chunk.css",
+    "static/js/runtime-main.a6f2d970.js",
+    "static/css/2.8c0c24c4.chunk.css",
     "static/js/2.616c9d2f.chunk.js",
-    "static/css/main.84c4f7fc.chunk.css",
+    "static/css/main.8dca5eb7.chunk.css",
     "static/js/main.202416f9.chunk.js"
   ]
 }
