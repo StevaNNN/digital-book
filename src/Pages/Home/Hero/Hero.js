@@ -10,7 +10,8 @@ const Hero = props => {
         searchedTerm,
         onRecordClick,
         onSearchTerm,
-        onSearchBtnClick
+        onSearchBtnClick,
+        onInputBlur
     } = props;
 
     let filteredTitle = searchedTerm ? ALL_TITLES.filter((item) => item.includes(searchedTerm)) : ALL_TITLES;
@@ -19,9 +20,10 @@ const Hero = props => {
         <section className={`db-section ${classes.Intro}`}>
             <div className={classes.InputWrapper}>
                 <h1 className={classes.Title}>Digital audio books and eBooks</h1>
-                <div className={classes.Input}>
+                <div className={classes.Input} id="trt">
                     <div>
                         <input
+                            onBlur={onInputBlur}
                             value={searchedTerm}
                             onChange={onSearchTerm}
                             type={"text"}

@@ -20,12 +20,31 @@ class Home extends Component {
         searchedBook: {}
     }
 
+    componentDidMount() {
+        document.addEventListener('click', this.onSearchBlurClearState);
+    }
+
+    componentWillUnmount() {
+        document.removeEventListener('click', this.onSearchBlurClearState);
+    }
+
     changeToTopRated = () => this.props.history.push('/top-rated');
     changeToTrending = () => this.props.history.push('/trending');
     changeToGenre = (item) => this.props.history.push({pathname: '/genre', search: '?=' + item });
     changeToLang = (item) => this.props.history.push({pathname: '/language', search: '?=' + item});
     changeToBook = () => this.props.history.push({pathname: '/book', search: '?=' + this.state.searchedBook.title});
     onSearchBtnClick = (term) => term && this.props.history.push({pathname: '/book', search: '?=' + term});
+
+    
+    onSearchBlurClearState = (event) => {
+        const element = document.getElementById('trt');
+
+        if(event.target !== element && !element.contains(event.target)) {
+            this.setState({
+                searchedTerm: ''
+            })
+        }
+    }
 
     topRatedBookClicked = index => {
         const {topRatedBooks} = this.props;

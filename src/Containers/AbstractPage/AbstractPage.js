@@ -1,6 +1,5 @@
 import React from 'react';
 import {genrePicker, langPicker, collectByTerm} from '../../Util';
-import data from "../../data.json";
 
 class AbstractPage extends React.Component {
     state = {
