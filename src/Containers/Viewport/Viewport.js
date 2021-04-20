@@ -9,7 +9,7 @@ import Genres from "../../Pages/Genres/Genres";
 import Languages from "../../Pages/Languages/Languages";
 import Footer from "../../Shared/Footer/Footer";
 import About from "../../Pages/About/About";
-import {genrePicker, ALL_GENRES} from "../../Util";
+import {genrePicker, langPicker, ALL_GENRES, ALl_LANGUAGES} from "../../Util";
 import AbstractPage from "../AbstractPage/AbstractPage";
 
 class Viewport extends React.Component {
@@ -30,6 +30,7 @@ class Viewport extends React.Component {
         });
 
         this.collectBooksByGenre();
+        this.collectBooksByLang();
     }
 
     collectBooksByGenre = () => {
@@ -38,13 +39,16 @@ class Viewport extends React.Component {
         ALL_GENRES.map(genre => {
             return arrayOfBookByGenre.push(genrePicker(genre).concat(genre));
         });
-        this.setState({
-            booksByGenre: arrayOfBookByGenre
-        })
+        this.setState({booksByGenre: arrayOfBookByGenre});
     }
 
-    openBackdrop = () => {
-        this.setState({ backDropActive: true })
+    collectBooksByLang = () => {
+        let arrayOfBookByLangs = [];
+
+        ALl_LANGUAGES.map(lang => {
+            return arrayOfBookByLangs.push(langPicker(lang).concat(lang));
+        });
+        this.setState({booksByLanguage: arrayOfBookByLangs});
     }
 
     toggleBackdrop = () => {
@@ -54,7 +58,10 @@ class Viewport extends React.Component {
         })
     }
 
+    openBackdrop = () => this.setState({ backDropActive: true })
+
     render() {
+
         const {
             backDropActive,
             topRatedBooks,

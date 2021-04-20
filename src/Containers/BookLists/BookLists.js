@@ -24,7 +24,7 @@ class DynamicPage extends Component{
         }
     }
 
-    onBookClick = (book) => {
+    onBookSubmit = (book) => {
         this.setState({
             selectedBook: book
         },() => {
@@ -35,6 +35,17 @@ class DynamicPage extends Component{
         });
     }
 
+    // onBookClick = (book) => {
+    //     this.setState({
+    //         selectedBook: book
+    //     },() => {
+    //         const win = window.open(this.state.selectedBook.link, '_blank');
+    //         if(win !== null) {
+    //             win.focus();
+    //         }
+    //     });
+    // }
+
     render() {
         
         const {
@@ -42,7 +53,8 @@ class DynamicPage extends Component{
         } = this.state;
 
         const {
-            extra
+            genre,
+            languages
         } = this.props;
 
         let formatedPageTitle;
@@ -57,7 +69,8 @@ class DynamicPage extends Component{
                     author={book.author}
                     title={book.title}
                     src={book.thumbnail}
-                    onSubmit={this.onBookClick.bind(this, book)}
+                    onClick={this.onBook}
+                    onSubmit={this.onBookSubmit.bind(this, book)}
                 />
             );
         });
@@ -68,54 +81,47 @@ class DynamicPage extends Component{
             formatedPageTitle = 'BOOKS BY ' + this.props.match.path.substring(1).toUpperCase();
         }
 
-        if(extra) {
-            bookClasses = [...bookClasses, classes.BooksByGenre]
+        let render = <>
+            <h1>{formatedPageTitle}</h1>
+            <div className={classes.Book}>
+                {renderBooks}
+            </div>
+        </>;
+
+        if(genre || languages) {
+            bookClasses = [...bookClasses, classes.RemoveLastOne];
+
+            render = arrayOfBooks && arrayOfBooks.map((bookGenre, index) => {
+                return (
+                    <div className={classes.Row} key={index}>
+                        {/* Extracting always the last record of each array which holds Genre Label*/}
+                        <h1>{bookGenre[bookGenre.length - 1]}</h1>
+                        <div className={classes.BooksWrap}>
+                            {bookGenre.map((book, index) => {
+                                return (
+                                    <div
+                                        className={bookClasses.join(' ')}
+                                        key={index}
+                                    >
+                                        <BookCard
+                                            alt={book.title}
+                                            genres={book.genres}
+                                            author={book.author}
+                                            title={book.title}
+                                            src={book.thumbnail}
+                                            onSubmit={this.onBookSubmit.bind(this, book)}
+                                        />
+                                    </div>
+                                );
+                            })}
+                        </div>
+                    </div>
+                )
+            });
         }
 
-        let renderBooksByGenre = arrayOfBooks && extra && arrayOfBooks.map((bookGenre, index) => {
-            return (
-                <div className={classes.Row} key={index}>
-                    <h1>{bookGenre[bookGenre.length - 1]}</h1>
-                    <div className={classes.BooksWrap}>
-                        {bookGenre.map((book, index) => {
-                            return (
-                                <div
-                                    className={bookClasses.join(' ')}
-                                    key={index}
-                                >
-                                    <BookCard
-                                        alt={book.title}
-                                        genres={book.genres}
-                                        author={book.author}
-                                        title={book.title}
-                                        src={book.thumbnail}
-                                        onSubmit={this.onBookClick.bind(this, book)}
-                                    />
-                                </div>
-                            );
-                        })}
-                    </div>
-                </div>
-            )
-        });
 
-        return (
-            <div>
-                {extra ?
-                    <>
-                        <h1>{formatedPageTitle}</h1>
-                        {renderBooksByGenre}
-                    </>
-                    :
-                    <>
-                        <h1>{formatedPageTitle}</h1>
-                        <div className={classes.Book}>
-                            {renderBooks}
-                        </div>
-                    </>
-                }
-            </div>
-        );
+        return <div>{render}</div>;
     }
 }
 

@@ -11,6 +11,7 @@ const languages = props => {
         <div>
             <BookLists
                 {...props}
+                languages
                 books={books}
             />
         </div>

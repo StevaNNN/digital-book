@@ -10,7 +10,7 @@ const genres = props => {
         <div>
             <BookLists
                 {...props}
-                extra
+                genre
                 books={books}
             />
         </div>
