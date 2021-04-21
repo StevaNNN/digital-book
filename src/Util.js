@@ -90,18 +90,13 @@ export const collectByTerm = (term) => {
             switch(key) {
                 case 'title':
                     return book[key].includes(term) ? tempArr.push(book) : null;
-                    break;
                 case 'author':
                     return book[key].includes(term) ? tempArr.push(book) : null;
-                    break
                 case 'genres':
                     return book[key].filter(item => item.includes(term) ? tempArr.push(book) : null);
-                    break;
                 case 'language':
                     return book[key].filter(item => item.includes(term) ? tempArr.push(book) : null);
-                    break;
                 default:
-                    break;
             }
         })
     });
@@ -170,40 +165,28 @@ const counterHelper = () => {
            switch (lang) {
                case 'English':
                    return langCounters.english = langCounters.english + 1
-                   break;
                case 'Dutch':
                    return langCounters.dutch = langCounters.dutch + 1
-                   break;
                case 'Chinese':
                    return langCounters.chinese = langCounters.chinese + 1
-                   break;
                case 'French':
                    return langCounters.french = langCounters.french + 1
-                   break;
                case 'German':
                    return langCounters.german = langCounters.german + 1
-                   break;
                case 'Italian':
                    return langCounters.italian = langCounters.italian + 1
-                   break;
                case 'Spanish':
                    return langCounters.spanish = langCounters.spanish + 1
-                   break;
                case 'Portuguese':
                    return langCounters.portuguese = langCounters.portuguese + 1
-                   break;
                case 'Russian':
                    return langCounters.russian = langCounters.russian + 1
-                   break;
                case 'Japanese':
                    return langCounters.japanese = langCounters.japanese + 1
-                   break;
                case 'Greek':
                    return langCounters.greek = langCounters.greek + 1
-                   break;
                case 'Latin':
                    return langCounters.latin = langCounters.latin + 1
-                   break;
                default:
                    break;
            }
@@ -212,40 +195,28 @@ const counterHelper = () => {
             switch (genre) {
                 case 'Top-Rated':
                     return genreCounters["Top-Rated"] = genreCounters["Top-Rated"] + 1
-                    break;
                 case 'Trending':
                     return genreCounters.Trending = genreCounters.Trending + 1
-                    break;
                 case 'SciFi':
                     return genreCounters.SciFi = genreCounters.SciFi + 1
-                    break;
                 case 'Classics':
                     return genreCounters.Classics = genreCounters.Classics + 1
-                    break;
                 case 'Fantasy':
                     return genreCounters.Fantasy = genreCounters.Fantasy + 1
-                    break;
                 case 'Horror':
                     return genreCounters.Horror = genreCounters.Horror + 1
-                    break;
                 case 'History':
                     return genreCounters.History = genreCounters.History + 1
-                    break;
                 case 'Children':
                     return genreCounters.Children = genreCounters.Children + 1
-                    break;
                 case 'Mystery':
                     return genreCounters.Mystery = genreCounters.Mystery + 1
-                    break;
                 case 'Romance':
                     return genreCounters.Romance = genreCounters.Romance + 1
-                    break;
                 case 'Fiction':
                     return genreCounters.Fiction = genreCounters.Fiction + 1
-                    break;
                 case 'Young-Adult':
                     return genreCounters["Young-Adult"] = genreCounters["Young-Adult"] + 1
-                    break;
                 default:
                     break;
             }
