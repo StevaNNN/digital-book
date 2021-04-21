@@ -3,6 +3,8 @@ import data from "./data.json";
 export let ALL_GENRES = [];
 export let ALl_LANGUAGES = [];
 export let ALL_TITLES = [];
+export let LANG_COUNTERS = {};
+export let GENRE_COUNTERS = {};
 
 export const genrePicker = (genre) => {
     let tempArr = [];
@@ -13,7 +15,6 @@ export const genrePicker = (genre) => {
     })
     return tempArr;
 }
-
 export const langPicker = (lang) => {
     let tempArr = [];
     data.books.forEach(book => {
@@ -23,7 +24,6 @@ export const langPicker = (lang) => {
     })
     return tempArr;
 }
-
 const collectAllGenres = () => {
     let books = data.books;
     let genresThatMather  = [];
@@ -64,7 +64,6 @@ const collectAllGenres = () => {
         });
     });
 }
-
 const collectAllLangs = () => {
     data.books.forEach(book => {
         book.language.forEach(genre => {
@@ -74,7 +73,6 @@ const collectAllLangs = () => {
         });
     });
 }
-
 const collectAllTitles = () => {
     data.books.forEach(book => {
         if(!ALL_TITLES.includes(book.title)) {
@@ -82,7 +80,6 @@ const collectAllTitles = () => {
         }
     });
 }
-
 export const collectByTerm = (term) => {
     let tempArr = [];
 
@@ -111,27 +108,154 @@ export const collectByTerm = (term) => {
 
     return uniqueArray(tempArr);
 }
-
 export const uniqueArray = (array) => {
     let newArray = [];
     let arrayLength = array.length;
     let current;
+
+    // while there is array length
     while (arrayLength) {
+        // decrement
         arrayLength--;
+        // store current record from passed array
         current = array[arrayLength];
+        // while looping through array records current record is not contained in newArray so push that one to new array
+        // since the indexOf is applied only on FIRST of duplicates it will always return -1 for that first unique record and
+        // we store that one to the new array uncomment below to see log in console
+        // console.log(newArray.indexOf(current))
         if (newArray.indexOf(current) === -1) {
             newArray.push(current);
         }
     }
     return newArray;
 }
-
-collectAllGenres();
-collectAllLangs();
-collectAllTitles();
-
 export const formatArrayBy = (arr, ...args) => {
     for (let i = 0; i < args.length; i++) {
         arr.push(arr.splice(arr.indexOf(args[i]), 1)[0]);
     }
 }
+const counterHelper = () => {
+    let genreCounters = {
+        "Young-Adult": 0,
+        Fiction: 0,
+        Romance: 0,
+        Mystery: 0,
+        Children: 0,
+        History: 0,
+        Horror: 0,
+        Fantasy: 0,
+        Classics: 0,
+        SciFi: 0,
+        "Top-Rated": 0,
+        Trending: 0
+    }
+
+    let langCounters = {
+        english: 0,
+        dutch: 0,
+        chinese: 0,
+        french: 0,
+        german: 0,
+        italian: 0,
+        spanish: 0,
+        portuguese: 0,
+        russian: 0,
+        japanese: 0,
+        greek: 0,
+        latin: 0
+    }
+
+    data.books.forEach(book => {
+       book.language.map(lang => {
+           switch (lang) {
+               case 'English':
+                   return langCounters.english = langCounters.english + 1
+                   break;
+               case 'Dutch':
+                   return langCounters.dutch = langCounters.dutch + 1
+                   break;
+               case 'Chinese':
+                   return langCounters.chinese = langCounters.chinese + 1
+                   break;
+               case 'French':
+                   return langCounters.french = langCounters.french + 1
+                   break;
+               case 'German':
+                   return langCounters.german = langCounters.german + 1
+                   break;
+               case 'Italian':
+                   return langCounters.italian = langCounters.italian + 1
+                   break;
+               case 'Spanish':
+                   return langCounters.spanish = langCounters.spanish + 1
+                   break;
+               case 'Portuguese':
+                   return langCounters.portuguese = langCounters.portuguese + 1
+                   break;
+               case 'Russian':
+                   return langCounters.russian = langCounters.russian + 1
+                   break;
+               case 'Japanese':
+                   return langCounters.japanese = langCounters.japanese + 1
+                   break;
+               case 'Greek':
+                   return langCounters.greek = langCounters.greek + 1
+                   break;
+               case 'Latin':
+                   return langCounters.latin = langCounters.latin + 1
+                   break;
+               default:
+                   break;
+           }
+       });
+        book.genres.map(genre => {
+            switch (genre) {
+                case 'Top-Rated':
+                    return genreCounters["Top-Rated"] = genreCounters["Top-Rated"] + 1
+                    break;
+                case 'Trending':
+                    return genreCounters.Trending = genreCounters.Trending + 1
+                    break;
+                case 'SciFi':
+                    return genreCounters.SciFi = genreCounters.SciFi + 1
+                    break;
+                case 'Classics':
+                    return genreCounters.Classics = genreCounters.Classics + 1
+                    break;
+                case 'Fantasy':
+                    return genreCounters.Fantasy = genreCounters.Fantasy + 1
+                    break;
+                case 'Horror':
+                    return genreCounters.Horror = genreCounters.Horror + 1
+                    break;
+                case 'History':
+                    return genreCounters.History = genreCounters.History + 1
+                    break;
+                case 'Children':
+                    return genreCounters.Children = genreCounters.Children + 1
+                    break;
+                case 'Mystery':
+                    return genreCounters.Mystery = genreCounters.Mystery + 1
+                    break;
+                case 'Romance':
+                    return genreCounters.Romance = genreCounters.Romance + 1
+                    break;
+                case 'Fiction':
+                    return genreCounters.Fiction = genreCounters.Fiction + 1
+                    break;
+                case 'Young-Adult':
+                    return genreCounters["Young-Adult"] = genreCounters["Young-Adult"] + 1
+                    break;
+                default:
+                    break;
+            }
+        })
+    });
+    LANG_COUNTERS = langCounters;
+    GENRE_COUNTERS = genreCounters;
+}
+
+collectAllGenres();
+collectAllLangs();
+collectAllTitles();
+counterHelper();

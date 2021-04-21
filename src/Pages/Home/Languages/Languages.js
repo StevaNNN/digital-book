@@ -1,6 +1,6 @@
 import React from 'react';
 // import classes from './Languages.module.scss';
-import {ALl_LANGUAGES} from "../../../Util";
+import {ALl_LANGUAGES, LANG_COUNTERS} from "../../../Util";
 import GenreLangCard from "../../../Components/GenreLangCard/GenreLangCard";
 
 const languages = props => {
@@ -23,6 +23,7 @@ const languages = props => {
                                 key={index}
                                 iconClass={`${item.toLowerCase()}`}
                                 label={item}
+                                counter={LANG_COUNTERS[item.toLowerCase()]}
                             />
                         )
                     })}

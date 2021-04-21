@@ -41,8 +41,6 @@ class AbstractPage extends Component {
             books
         } = this.state;
 
-        console.log(this.state)
-
         let booksRender = books.length > 0 ? books.map((book, index) => {
             return(
                 <BookCard

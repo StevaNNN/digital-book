@@ -1,6 +1,6 @@
 import React from 'react';
 import GenreLangCard from "../../../Components/GenreLangCard/GenreLangCard";
-import {ALL_GENRES} from '../../../Util.js';
+import {ALL_GENRES, GENRE_COUNTERS} from '../../../Util.js';
 import {formatArrayBy} from "../../../Util";
 
 const genres = props => {
@@ -26,7 +26,7 @@ const genres = props => {
                                 key={index}
                                 iconClass={`${item.toLowerCase()}`}
                                 label={item}
-                                counter={1}
+                                counter={GENRE_COUNTERS[item]}
                             />
                         )
                     })}

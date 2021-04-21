@@ -1,0 +1,12 @@
+//{
+//  "eslintConfig": {
+//    "overrides": [
+//      {
+//        "rules": {
+//          "no-unused-vars": "warn",
+//          "no-unreachable": false
+//        }
+//      }
+//    ]
+//  }
+//}
