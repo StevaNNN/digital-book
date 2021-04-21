@@ -1,52 +1,70 @@
-import React from 'react';
+import React, {Component} from 'react';
 import {genrePicker, langPicker, collectByTerm} from '../../Util';
+import BookCard from "../../Components/BookCard/BookCard";
 
-class AbstractPage extends React.Component {
+class AbstractPage extends Component {
+
     state = {
         term: '',
-        booksByGenre: [],
-        booksByLang: [],
-        booksBySearchedTerm: []
+        books: []
     }
 
     componentDidMount() {
         const searchParam = new URLSearchParams(this.props.location.search);
         for (let param of searchParam.entries()) {
-            this.setState({
-                term: param[1],
-                booksByGenre: genrePicker(param[1]),
-                booksByLang: langPicker(param[1]),
-                booksBySearchedTerm: collectByTerm(param[1])
-            })
+            if(this.props.genre) {
+                this.setState({
+                    term: param[1],
+                    books: genrePicker(param[1])
+                })
+            } else if (this.props.lang) {
+                this.setState({
+                    term: param[1],
+                    books: langPicker(param[1])
+                })
+            } else  {
+                this.setState({
+                    term: param[1],
+                    books: collectByTerm(param[1])
+                })
+            }
         }
     }
 
+    // Collecting selected book and pass it the to parent
+    onBookSubmit = (book) => this.props.selectedBook(book);
+    onBookClick = (book) => this.props.selectedBook(book);
+
     render() {
-        const { 
-            genre,
-            book
-        } = this.props;
 
         const {
-            booksByGenre,
-            booksByLang,
-            booksBySearchedTerm
+            books
         } = this.state;
 
-        let arrayOfBooks;
+        console.log(this.state)
 
-        if (genre && !book) {
-            arrayOfBooks = booksByGenre.map((book, index) => <div key={index}>{book.title}</div>)
-        } else if(book) {
-            arrayOfBooks = booksBySearchedTerm.map((book, index) => <div key={index}>{book.title}</div>)
-        } else {
-            arrayOfBooks = booksByLang.map((book, index) => <div key={index}>{book.title}</div>)
-        }
+        let booksRender = books.length > 0 ? books.map((book, index) => {
+            return(
+                <BookCard
+                    key={index}
+                    title={book.title}
+                    author={book.author}
+                    src={book.thumbnail}
+                    alt={book.title}
+                    genres={book.genres}
+                    submitLabel={"Proceed"}
+                    onClick={this.onBookClick.bind(this, book)}
+                    onSubmit={this.onBookSubmit.bind(this, book)}
+                />
+            )
+        }) : <div>No books found by searched term</div>;
 
         return (
-            <div>
-               {arrayOfBooks}
-            </div>
+            <section className={`db-section`}>
+                <div className={`db-section-wrapper`}>
+                    {booksRender}
+                </div>
+            </section>
         );
     }
 }

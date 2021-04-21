@@ -2,16 +2,17 @@ import React from 'react';
 import classes from './BookCard.module.scss';
 import Button from "../UI/Button/Button";
 
-const bookCard = (props) => {
+const bookCard = props => {
 
     const {
-        genres,
-        onClick,
-        src,
-        alt,
         title,
         author,
-        onSubmit
+        src,
+        alt,
+        genres,
+        submitLabel,
+        onSubmit,
+        onClick
     } = props;
 
     return(
@@ -43,7 +44,7 @@ const bookCard = (props) => {
                     onClick={onSubmit}
                     additionalClass={classes.BookBtn}
                 >
-                    Buy
+                    {submitLabel}
                 </Button>
             </>
             }

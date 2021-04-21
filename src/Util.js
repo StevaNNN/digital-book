@@ -1,4 +1,5 @@
 import data from "./data.json";
+
 export let ALL_GENRES = [];
 export let ALl_LANGUAGES = [];
 export let ALL_TITLES = [];
@@ -106,9 +107,23 @@ export const collectByTerm = (term) => {
                     break;
             }
         })
-    })
+    });
 
-    return tempArr;
+    return uniqueArray(tempArr);
+}
+
+export const uniqueArray = (array) => {
+    let newArray = [];
+    let arrayLength = array.length;
+    let current;
+    while (arrayLength) {
+        arrayLength--;
+        current = array[arrayLength];
+        if (newArray.indexOf(current) === -1) {
+            newArray.push(current);
+        }
+    }
+    return newArray;
 }
 
 collectAllGenres();

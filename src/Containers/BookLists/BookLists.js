@@ -7,7 +7,6 @@ class DynamicPage extends Component{
     state = {
         arrayOfBooks: []
     }
-
     // Collecting all books from props to state
     componentDidMount() {
         this.setState({
@@ -26,6 +25,7 @@ class DynamicPage extends Component{
     }
     // Collecting selected book and pass it the to parent
     onBookSubmit = (book) => this.props.selectedBook(book);
+    onBookClick = (book) => this.props.selectedBook(book);
 
     render() {
         
@@ -50,7 +50,8 @@ class DynamicPage extends Component{
                     author={book.author}
                     title={book.title}
                     src={book.thumbnail}
-                    onClick={this.onBook}
+                    submitLabel={"Proceed"}
+                    onClick={this.onBookClick.bind(this, book)}
                     onSubmit={this.onBookSubmit.bind(this, book)}
                 />
             );
@@ -93,9 +94,11 @@ class DynamicPage extends Component{
                                         <BookCard
                                             alt={book.title}
                                             genres={book.genres}
+                                            submitLabel={"Proceed"}
                                             author={book.author}
                                             title={book.title}
                                             src={book.thumbnail}
+                                            onClick={this.onBookClick.bind(this, book)}
                                             onSubmit={this.onBookSubmit.bind(this, book)}
                                         />
                                     </div>

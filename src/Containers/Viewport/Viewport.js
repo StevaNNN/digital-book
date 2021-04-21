@@ -108,8 +108,6 @@ class Viewport extends React.Component {
             booksByLanguage
         } = this.state;
 
-        console.log(this.state)
-
         return(
             <>
                 <Header clicked={this.toggleBackdrop} />
@@ -129,17 +127,6 @@ class Viewport extends React.Component {
                                         {...routeProps}
                                         books={topRatedBooks}
                                         selectedBook={this.onBookClick}
-                                    />
-                                )
-                            }}
-                        />
-                        <Route
-                            path={'/book'}
-                            render={(routeProps) => {
-                                return(
-                                    <AbstractPage
-                                        {...routeProps}
-                                        book
                                     />
                                 )
                             }}
@@ -170,27 +157,6 @@ class Viewport extends React.Component {
                             }}
                         />
                         <Route
-                            path={'/genre'}
-                            render={(routeProps) => {
-                                return(
-                                    <AbstractPage
-                                        {...routeProps}
-                                        genre
-                                    />
-                                )
-                            }}
-                        />
-                        <Route
-                            path={'/language'}
-                            render={(routeProps) => {
-                                return(
-                                    <AbstractPage
-                                        {...routeProps}
-                                    />
-                                )
-                            }}
-                        />
-                        <Route
                             path={'/languages'}
                             render={(routeProps)=> {
                                 return(
@@ -207,6 +173,40 @@ class Viewport extends React.Component {
                             render={(routeProps) => {
                                 return(
                                     <About {...routeProps} />
+                                )
+                            }}
+                        />
+                        <Route
+                            path={'/book'}
+                            render={(routeProps) => {
+                                return(
+                                    <AbstractPage
+                                        {...routeProps}
+                                        selectedBook={this.onBookClick}
+                                    />
+                                )
+                            }}
+                        />
+                        <Route
+                            path={'/genre'}
+                            render={(routeProps) => {
+                                return(
+                                    <AbstractPage
+                                        {...routeProps}
+                                        selectedBook={this.onBookClick}
+                                        genre
+                                    />
+                                )
+                            }}
+                        />
+                        <Route
+                            path={'/language'}
+                            render={(routeProps) => {
+                                return(
+                                    <AbstractPage
+                                        {...routeProps}
+                                        selectedBook={this.onBookClick}
+                                    />
                                 )
                             }}
                         />
