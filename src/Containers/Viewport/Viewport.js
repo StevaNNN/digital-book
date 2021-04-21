@@ -1,28 +1,42 @@
 import React from "react";
 import {Route, Switch} from "react-router-dom";
+import {genrePicker, langPicker, ALL_GENRES, ALl_LANGUAGES} from "../../Util";
 import Header from '../../Components/Navigation/Header/Header';
 import SideDrawer from '../../Components/Navigation/SideDrawer/SideDrawer';
-import TopRated from "../../Pages/TopRated/TopRated";
+import AbstractPage from "../AbstractPage/AbstractPage";
 import Home from '../Home/Home';
+import TopRated from "../../Pages/TopRated/TopRated";
 import Trending from "../../Pages/Trending/Trending";
 import Genres from "../../Pages/Genres/Genres";
 import Languages from "../../Pages/Languages/Languages";
 import Footer from "../../Shared/Footer/Footer";
 import About from "../../Pages/About/About";
-import {genrePicker, langPicker, ALL_GENRES, ALl_LANGUAGES} from "../../Util";
-import AbstractPage from "../AbstractPage/AbstractPage";
+import BookInDialog from "../../Shared/BookInDialog/BookInDialog";
+import Dialog from "../../Components/UI/Dialog/Dialog";
 
 class Viewport extends React.Component {
 
     state = {
+        // Global toggles booleans
         backDropActive: false,
-        scrollInto: '',
+        modalOpened: false,
+
+        //////////////////////////
+        // Home page slider arrays
         trendingBooks: [],
         topRatedBooks: [],
-        booksByGenre: [],
-        booksByLanguage: []
-    }
 
+        //////////////////////////
+        // GENRE/LANGUAGE pages arrays
+        booksByGenre: [],
+        booksByLanguage: [],
+        /////////////////////////
+
+        // Currently selected book object
+        selectedBook: {}
+    }
+    // Fetching all books by Trending genre
+    // Fetching all books by Top-Rated genre
     componentDidMount() {
         this.setState({
             trendingBooks: genrePicker('Trending'),
@@ -32,7 +46,7 @@ class Viewport extends React.Component {
         this.collectBooksByGenre();
         this.collectBooksByLang();
     }
-
+    // Fetching all books by Genres
     collectBooksByGenre = () => {
         let arrayOfBookByGenre = [];
 
@@ -41,7 +55,7 @@ class Viewport extends React.Component {
         });
         this.setState({booksByGenre: arrayOfBookByGenre});
     }
-
+    // Fetching all books by Languages
     collectBooksByLang = () => {
         let arrayOfBookByLangs = [];
 
@@ -50,19 +64,43 @@ class Viewport extends React.Component {
         });
         this.setState({booksByLanguage: arrayOfBookByLangs});
     }
-
+    // Toggling backdrop visibility
     toggleBackdrop = () => {
         // we should use this way when comparing states because of async set of state
         this.setState( (prevState) => {
             return { backDropActive: !prevState.backDropActive }
         })
     }
-
-    openBackdrop = () => this.setState({ backDropActive: true })
+    // Collect selected book from children components
+    onBookClick = (book) => this.setState({selectedBook: book, modalOpened: true});
+    // Closing Modal
+    closeModal = () => this.setState({modalOpened: false});
+    // Clicking on book from top-rated books slider on Home page
+    // receive index which is responsible for flagging currently
+    // clicked book in trending books slider
+    topRatedBookClicked = index => {
+        const {topRatedBooks} = this.state;
+        this.setState({
+            selectedBook: topRatedBooks[index],
+            modalOpened: true
+        })
+    }
+    // Clicking on book from trending books slider on Home page
+    // receive index which is responsible for flagging currently
+    // clicked book in trending books slider
+    trendingBookClicked = index => {
+        const {trendingBooks} = this.state;
+        this.setState({
+            selectedBook: trendingBooks[index],
+            modalOpened: true
+        })
+    }
 
     render() {
 
         const {
+            modalOpened,
+            selectedBook,
             backDropActive,
             topRatedBooks,
             trendingBooks,
@@ -70,11 +108,11 @@ class Viewport extends React.Component {
             booksByLanguage
         } = this.state;
 
+        console.log(this.state)
+
         return(
             <>
-                <Header 
-                clicked={this.openBackdrop}
-                />
+                <Header clicked={this.toggleBackdrop} />
                 <SideDrawer
                     opened={backDropActive}
                     backDropUp={backDropActive}
@@ -90,6 +128,7 @@ class Viewport extends React.Component {
                                     <TopRated
                                         {...routeProps}
                                         books={topRatedBooks}
+                                        selectedBook={this.onBookClick}
                                     />
                                 )
                             }}
@@ -112,6 +151,7 @@ class Viewport extends React.Component {
                                     <Trending
                                         {...routeProps}
                                         books={trendingBooks}
+                                        selectedBook={this.onBookClick}
                                     />
                                 )
                             }}
@@ -124,6 +164,7 @@ class Viewport extends React.Component {
                                     <Genres
                                         {...routeProps}
                                         books={booksByGenre}
+                                        selectedBook={this.onBookClick}
                                     />
                                 )
                             }}
@@ -155,6 +196,7 @@ class Viewport extends React.Component {
                                 return(
                                     <Languages
                                         {...routeProps}
+                                        selectedBook={this.onBookClick}
                                         books={booksByLanguage}
                                     />
                                 )
@@ -174,6 +216,8 @@ class Viewport extends React.Component {
                                 return(
                                     <Home
                                         {...routeProps}
+                                        topRatedBookClicked={this.topRatedBookClicked}
+                                        trendingBookClicked={this.trendingBookClicked}
                                         topRatedBooks={topRatedBooks}
                                         trendingBooks={trendingBooks}
                                     />
@@ -183,6 +227,21 @@ class Viewport extends React.Component {
                     </Switch>
                 </main>
                 <Footer />
+                <Dialog
+                    title={"Book summary"}
+                    close={this.closeModal}
+                    onSubmit={this.closeModal}
+                    open={modalOpened}
+                    footerActionLabel="Close"
+                >
+                    <BookInDialog
+                        title={selectedBook.title}
+                        author={selectedBook.author}
+                        thumbnail={selectedBook.thumbnail}
+                        description={selectedBook.description}
+                        link={selectedBook.link}
+                    />
+                </Dialog>
             </>
         );
     }

@@ -49,6 +49,6 @@ class AbstractPage extends React.Component {
             </div>
         );
     }
-};
+}
 
 export default AbstractPage;

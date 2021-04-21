@@ -5,17 +5,18 @@ import classes from './BookLists.module.scss';
 class DynamicPage extends Component{
 
     state = {
-        arrayOfBooks: [],
-        selectedBook: {}
+        arrayOfBooks: []
     }
 
-
+    // Collecting all books from props to state
     componentDidMount() {
         this.setState({
             arrayOfBooks: this.props.books
         })
     }
 
+    // Reset state of component if previous props(books) are not the same as the currently ones
+    // basicly reset the state after page refresh!
     componentDidUpdate(prevProps) {
         if(prevProps !== this.props) {
             this.setState({
@@ -23,28 +24,8 @@ class DynamicPage extends Component{
             })
         }
     }
-
-    onBookSubmit = (book) => {
-        this.setState({
-            selectedBook: book
-        },() => {
-            const win = window.open(this.state.selectedBook.link, '_blank');
-            if(win !== null) {
-                win.focus();
-            }
-        });
-    }
-
-    // onBookClick = (book) => {
-    //     this.setState({
-    //         selectedBook: book
-    //     },() => {
-    //         const win = window.open(this.state.selectedBook.link, '_blank');
-    //         if(win !== null) {
-    //             win.focus();
-    //         }
-    //     });
-    // }
+    // Collecting selected book and pass it the to parent
+    onBookSubmit = (book) => this.props.selectedBook(book);
 
     render() {
         
@@ -80,24 +61,30 @@ class DynamicPage extends Component{
         } else {
             formatedPageTitle = 'BOOKS BY ' + this.props.match.path.substring(1).toUpperCase();
         }
-
+        // This renders is responsible for presenting books on Trending and Top-Rated pages
         let render = <>
             <h1>{formatedPageTitle}</h1>
-            <div className={classes.Book}>
-                {renderBooks}
-            </div>
+            <section className={`db-section ${classes.Book}`}>
+                <div className={`db-section-wrapper`}>
+                    {renderBooks}
+                </div>
+            </section>
         </>;
 
+        // This condition is responsible for overriding above render only on Genres and Languages Pages
         if(genre || languages) {
+            // setting addition class on genres and languages pages which will be responsible
+            // for flagging that last item should be not presented to the user
+            // since that last record in array is concat to the each array flagging the specific genre or language
             bookClasses = [...bookClasses, classes.RemoveLastOne];
 
-            render = arrayOfBooks && arrayOfBooks.map((bookGenre, index) => {
+            render = arrayOfBooks && arrayOfBooks.map((booksInnerArray, index) => {
                 return (
-                    <div className={classes.Row} key={index}>
-                        {/* Extracting always the last record of each array which holds Genre Label*/}
-                        <h1>{bookGenre[bookGenre.length - 1]}</h1>
+                    <section className={classes.Row} key={index}>
+                        {/* Extracting always the last record of each array which holds Genre/Language Label*/}
+                        <h1>{booksInnerArray[booksInnerArray.length - 1]}</h1>
                         <div className={classes.BooksWrap}>
-                            {bookGenre.map((book, index) => {
+                            {booksInnerArray.map((book, index) => {
                                 return (
                                     <div
                                         className={bookClasses.join(' ')}
@@ -115,13 +102,11 @@ class DynamicPage extends Component{
                                 );
                             })}
                         </div>
-                    </div>
+                    </section>
                 )
             });
         }
-
-
-        return <div>{render}</div>;
+        return <>{render}</>;
     }
 }
 

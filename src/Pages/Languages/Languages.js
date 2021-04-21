@@ -4,14 +4,18 @@ import BookLists from "../../Containers/BookLists/BookLists";
 const languages = props => {
 
     const {
-        books
-    } = props
+        books,
+        selectedBook
+    } = props;
+
+    const passSelectedBookToParent = book => selectedBook(book);
 
     return (
         <div>
             <BookLists
                 {...props}
                 languages
+                selectedBook={passSelectedBookToParent}
                 books={books}
             />
         </div>

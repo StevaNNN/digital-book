@@ -3,15 +3,19 @@ import BookLists from "../../Containers/BookLists/BookLists";
 
 const genres = props => {
     const {
-        books
+        books,
+        selectedBook
     } = props;
+
+    const passSelectedBookToParent = book => selectedBook(book);
 
     return (
         <div>
             <BookLists
                 {...props}
-                genre
                 books={books}
+                genre
+                selectedBook={passSelectedBookToParent}
             />
         </div>
     );
