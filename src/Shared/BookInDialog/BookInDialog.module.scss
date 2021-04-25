@@ -1,9 +1,27 @@
+@import "../../Theme/sass/abstract/variables";
+
 .BookWrapper {
   display: flex;
 
   > div {
     display: flex;
     flex-direction: column;
+
+    > div {
+      margin-bottom: 1rem;
+    }
+
+    &:last-of-type {
+      margin-left: 1rem;
+    }
+  }
+
+  h3 {
+    font-size: 2rem;
+  }
+
+  h4 {
+    font-style: italic;
   }
 
   a {
@@ -16,9 +34,19 @@
 
   img {
     max-width: 100%;
-    height: auto;
     margin-bottom: 2rem;
     border-radius: 8px;
     overflow: hidden;
+    min-width: 23rem;
+    min-height: 26rem;
+    width: 23rem;
+    height: 26rem;
+    position: sticky;
+    top: 0;
+  }
+
+  button {
+    position: sticky;
+    top: 28rem;
   }
 }

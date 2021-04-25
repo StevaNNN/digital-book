@@ -37,8 +37,8 @@ const bookCard = props => {
             />
             {genres && <>
                 <div className={classes.BookCardContent}>
-                    <h3 className={classes.BookTitle}>{title}</h3>
-                    <p className={`db-text-color ${classes.BookAuthor}`}>{author}</p>
+                    <h3 className={`db-text-color-dark`}>{title}</h3>
+                    <p className={`db-text-color db-font-semibold`}>{author}</p>
                     <div className={classes.BookGenres}>
                         {genres.map((genre, index) => {
                             return(

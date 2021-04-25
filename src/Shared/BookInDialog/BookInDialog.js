@@ -1,6 +1,6 @@
 import React from 'react';
 import Button from '../../Components/UI/Button/Button';
-import clases from './BookInDialog.module.scss';
+import classes from './BookInDialog.module.scss';
 
 const bookInDialog = (props) => {
     
@@ -21,24 +21,28 @@ const bookInDialog = (props) => {
     }
 
     return (
-        <div className={clases.BookWrapper}>
+        <div className={classes.BookWrapper}>
             <div>
                 <div>
-                    <span className={clases.label}>Title:</span>
-                    <h3>{title}</h3>
+                    <span className={`db-text-color db-font-semibold`}>Title:</span>
+                    <h3 className={`db-text-color-dark`}>{title}</h3>
                 </div>
                 <div>
-                    <span className={clases.label}>Author:</span>
-                    <h6>{author}</h6>
+                    <span className={`db-text-color db-font-semibold`}>Author:</span>
+                    <h4 className={`db-text-color-dark`}>{author}</h4>
                 </div>
                 <div>
-                    <span className={clases.label}>Description:</span>
-                    <p>{description}</p>
+                    <span className={`db-text-color db-font-semibold`}>Description:</span>
+                    <p className={`db-text-color-dark`}>{description}</p>
                 </div>
             </div>
             <div>
-                <img style={{maxWidth: '300px', height: '300px'}} src={thumbnail} alt={title}/>
-                <Button large primary onClick={(event) => onClickBuy(event, link)}>
+                <img src={thumbnail} alt={title}/>
+                <Button
+                    large
+                    primary
+                    onClick={(event) => onClickBuy(event, link)}
+                >
                     Buy
                 </Button>
             </div>
