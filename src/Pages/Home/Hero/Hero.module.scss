@@ -1,8 +1,13 @@
 @import "../../../Theme/sass/abstract/variables";
-@import "../../../Theme//sass/abstract/functions";
+@import "../../../Theme/sass/abstract/functions";
+
 .Intro {
-  min-height: 76.7rem - 8rem;
+  height: 76.7rem - 8rem;
   position: relative;
+
+  @media only screen and (orientation: portrait) {
+    height: calc(85vh - 80px - 56px);
+  }
 
   .BackgroundPlaceholder {
     position: absolute;
@@ -17,20 +22,26 @@
     background-repeat: no-repeat;
     background-position: center bottom;
 
-    &::before,
-    &::after {
-      content: "";
-      position: absolute;
-      top: 0;
-      width: 15%;
-      bottom: 0;
-      background-image: linear-gradient(
-        to bottom,
-        #fff,
-        rgba(255, 255, 255, 0)
-      );
-      background-repeat: no-repeat;
-      background-size: cover;
+    @media (max-height: 650px) {
+      background-size: 100%;
+    }
+
+    @media (min-width: 875px) {
+      &::before,
+      &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        width: 15%;
+        bottom: 0;
+        background-image: linear-gradient(to bottom, #fff, rgba(255, 255, 255, 0));
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+    }
+
+    @media (max-height: 650px) {
+      opacity: 0;
     }
 
     &:before {
@@ -43,15 +54,31 @@
   }
 
   .InputWrapper {
-    padding-top: 15rem;
     width: 100%;
     max-width: 60rem;
     text-align: center;
+
+    @media (min-width: 651px) {
+      padding-top: 15rem;
+    }
+
+    @media (max-width: 650px) {
+      padding-top: 10rem;
+    }
+
+    @media (max-width: 450px) {
+      padding-top: 5rem;
+    }
   }
 
   .Title {
-    font-size: 3rem;
-    margin-bottom: 3rem;
+    margin: 0 auto 3rem;
+    font-size: 4rem;
+    text-align: center;
+
+    @media (max-width: 768px) {
+      width: 75%;
+    }
   }
 
   .Input {
@@ -63,6 +90,8 @@
 
     > div {
       display: flex;
+      z-index: 2;
+      background-color: white;
     }
 
     ul {
@@ -105,6 +134,7 @@
     input {
       background-color: $white !important;
       height: calc(100% - 2px);
+      max-width: calc(100% - 8rem);
       border: 0;
       background: none;
       flex: 1;
@@ -116,7 +146,9 @@
 
     button {
       width: 8rem;
+      min-width: 8rem;
       height: 7.8rem;
+      min-height: 7.8rem;
       border-radius: 50%;
     }
   }

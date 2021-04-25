@@ -190,6 +190,7 @@ const counterHelper = () => {
                default:
                    break;
            }
+           return LANG_COUNTERS = langCounters;
        });
         book.genres.map(genre => {
             switch (genre) {
@@ -220,10 +221,9 @@ const counterHelper = () => {
                 default:
                     break;
             }
+            return GENRE_COUNTERS = genreCounters;
         })
     });
-    LANG_COUNTERS = langCounters;
-    GENRE_COUNTERS = genreCounters;
 }
 
 collectAllGenres();

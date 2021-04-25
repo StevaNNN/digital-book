@@ -17,7 +17,7 @@ const navigationItems = props => {
 
     return(
         <ul className={classes.NavigationItems}>
-            <NavigationItem inFooter={footer} tabIndex={tabIndexInSideDrawer} link="/">Home</NavigationItem>
+            {/*<NavigationItem inFooter={footer} tabIndex={tabIndexInSideDrawer} link="/">Home</NavigationItem>*/}
             <NavigationItem inFooter={footer} tabIndex={tabIndexInSideDrawer} link="/top-rated" >TopRated</NavigationItem>
             <NavigationItem inFooter={footer} tabIndex={tabIndexInSideDrawer} link="/trending">Trending</NavigationItem>
             <NavigationItem inFooter={footer} tabIndex={tabIndexInSideDrawer} link="/genres" >Genres</NavigationItem>
