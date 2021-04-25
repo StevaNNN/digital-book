@@ -10,13 +10,11 @@ const trending = props => {
     const passSelectedBookToParent = book => selectedBook(book);
 
     return (
-        <div>
-            <BookLists
-                {...props}
-                books={books}
-                selectedBook={passSelectedBookToParent}
-            />
-        </div>
+        <BookLists
+            {...props}
+            books={books}
+            selectedBook={passSelectedBookToParent}
+        />
     );
 }
 

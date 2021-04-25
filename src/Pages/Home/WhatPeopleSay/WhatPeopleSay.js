@@ -1,13 +1,13 @@
 import React from 'react';
 import classes from './WhatPeopleSay.module.scss';
 
-const whatPeopeleSay = props => {
+const whatPeopeleSay = () => {
 
     return(
         <section className={`db-section`}>
             <div className={'db-section-wrapper'}>
                 <div className={`db-section-header ${classes.WhatPeopleSayHeader}`}>
-                    <h1>What People are saying</h1>
+                    <h1 className={'db-section-title'}>What People are saying</h1>
                 </div>
                 <div className={classes.CommentsWrap}>
                     <div className={`${classes.Comment} db-text-color`}>

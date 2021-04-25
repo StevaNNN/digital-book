@@ -14,7 +14,7 @@ const trending = props => {
         <section className={`db-section ${classes.Trending}`}>
             <div className={'db-section-wrapper'}>
                 <div className={'db-section-header'}>
-                    <h1>Trending books</h1>
+                    <h1 className={'db-section-title'}>Trending books</h1>
                     <Button onClick={goToTrendingPage}>More</Button>
                 </div>
                 <SliderAbstract

@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {genrePicker, langPicker, collectByTerm} from '../../Util';
 import BookCard from "../../Components/BookCard/BookCard";
+import classes from "./AbstractPage.module.scss";
 
 class AbstractPage extends Component {
 
@@ -49,6 +50,7 @@ class AbstractPage extends Component {
                     author={book.author}
                     src={book.thumbnail}
                     alt={book.title}
+                    onPage
                     genres={book.genres}
                     submitLabel={"Proceed"}
                     onClick={this.onBookClick.bind(this, book)}
@@ -58,10 +60,8 @@ class AbstractPage extends Component {
         }) : <div>No books found by searched term</div>;
 
         return (
-            <section className={`db-section`}>
-                <div className={`db-section-wrapper`}>
-                    {booksRender}
-                </div>
+            <section className={`db-section ${classes.BooksOnPage}`}>
+                {booksRender}
             </section>
         );
     }

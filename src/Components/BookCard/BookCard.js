@@ -1,6 +1,7 @@
 import React from 'react';
 import classes from './BookCard.module.scss';
 import Button from "../UI/Button/Button";
+import classNames from "classnames";
 
 const bookCard = props => {
 
@@ -12,13 +13,21 @@ const bookCard = props => {
         genres,
         submitLabel,
         onSubmit,
-        onClick
+        onClick,
+        onPage
     } = props;
+
+    const bookClasses = classNames(
+        classes.BookCard,
+        {
+            [classes.BookOnPage]: onPage
+        }
+    );
 
     return(
         <div
             onClick={onClick}
-            className={classes.BookCard}
+            className={bookClasses}
             tabIndex={0}
         >
             <img
@@ -27,25 +36,29 @@ const bookCard = props => {
                 className={classes.BookThumb}
             />
             {genres && <>
-                <div>{title}</div>
-                <div>{author}</div>
-                <div className={classes.BookGenres}>
-                    {genres.map((genre, index) => {
-                        return(
-                            <div key={index} className={classes.BookGenre}>{genre}</div>
-                        )
-                    })}
+                <div className={classes.BookCardContent}>
+                    <h3 className={classes.BookTitle}>{title}</h3>
+                    <p className={`db-text-color ${classes.BookAuthor}`}>{author}</p>
+                    <div className={classes.BookGenres}>
+                        {genres.map((genre, index) => {
+                            return(
+                                <div key={index} className={classes.BookGenre}>{genre}</div>
+                            )
+                        })}
+                    </div>
                 </div>
-                <Button
-                    block
-                    primary
-                    rounded
-                    large
-                    onClick={onSubmit}
-                    additionalClass={classes.BookBtn}
-                >
-                    {submitLabel}
-                </Button>
+                <div className={classes.BookCardFooter}>
+                    <Button
+                        block
+                        primary
+                        rounded
+                        large
+                        onClick={onSubmit}
+                        additionalClass={classes.BookBtn}
+                    >
+                        {submitLabel}
+                    </Button>
+                </div>
             </>
             }
         </div>

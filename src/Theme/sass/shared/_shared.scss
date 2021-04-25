@@ -59,56 +59,46 @@
     padding: 4rem 2rem;
     display: flex;
     justify-content: center;
+}
 
-    .#{$prefix}section-wrapper {
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: column;
+.#{$prefix}section-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 120rem;
+    width: 100%;
+}
+
+.#{$prefix}section-header {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem 0;
+    flex: 1;
+    margin-bottom: 3rem;
+
+    @media (max-width: 768px){
         justify-content: center;
-        max-width: 120rem;
-        width: 100%;
-    }
 
-    .#{$prefix}section-header {
-        display: flex;
-        justify-content: space-between;
-        padding: 2rem 0;
-        flex: 1;
-
-        h1 {
-            margin: 0;
-            font-size: 3.2rem;
+        .#{$prefix}section-title {
+            flex: 1;
         }
     }
 
-    .#{$prefix}card-wrapper {
-        display: flex;
-        flex-wrap: wrap;
+    &.#{$prefix}header-centered {
         justify-content: center;
+
+        .#{$prefix}section-title {
+            text-transform: uppercase;
+        }
     }
 }
 
-* {
-    scrollbar-color: grey transparent;
-    scrollbar-width: thin;
-
-    &::-webkit-scrollbar {
-        border-radius: 16px;
-        height: 1rem;
-        width: 1rem;
-    }
-
-    &::-webkit-scrollbar-thumb {
-        background-color: grey;
-        border-radius: 16px;
-        height: 1rem;
-        width: 1rem;
-    }
-
-    &::-webkit-scrollbar-corner {
-        background-color: transparent;
-        border-radius: 16px;
-    }
+.#{$prefix}card-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .#{$prefix}cp {
@@ -116,4 +106,21 @@
     margin: 0;
     text-align: center;
     padding-bottom: 2rem;
+}
+
+.#{$prefix}section-title {
+    margin: 0;
+    font-size: 3.2rem;
+    text-align: center;
+
+    @media (max-width: 450px) {
+        font-size: 2.6rem;
+    }
+}
+
+.#{$prefix}section-content {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
 }

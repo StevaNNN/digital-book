@@ -10,14 +10,12 @@ const genres = props => {
     const passSelectedBookToParent = book => selectedBook(book);
 
     return (
-        <div>
-            <BookLists
-                {...props}
-                books={books}
-                genre
-                selectedBook={passSelectedBookToParent}
-            />
-        </div>
+        <BookLists
+            {...props}
+            books={books}
+            genre
+            selectedBook={passSelectedBookToParent}
+        />
     );
 }
 

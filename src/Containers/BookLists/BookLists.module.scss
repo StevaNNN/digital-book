@@ -1,5 +1,9 @@
+.BooksPage {
+    flex-direction: column;
+}
+
 .Book {
-    //width: 30rem;
+   display: inline-flex;
 }
 
 .RemoveLastOne {
@@ -16,4 +20,5 @@
 .BooksWrap {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
 }

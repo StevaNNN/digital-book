@@ -13,7 +13,7 @@ const languages = props => {
         <section className={`db-section`}>
             <div className={`db-section-wrapper`}>
                 <div className={'db-section-header'}>
-                    <h1>Languages</h1>
+                    <h1 className={'db-section-title'}>Languages</h1>
                 </div>
                 <div className={`db-card-wrapper`}>
                     {ALl_LANGUAGES.map((item, index) => {

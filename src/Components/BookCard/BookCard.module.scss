@@ -1,9 +1,33 @@
+@import "../../Theme/sass/abstract/variables";
+
 .BookCard {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 0 0.5rem;
   cursor: pointer;
+}
+
+.BookOnPage {
+  max-width: 27rem;
+  box-shadow: 0 0 12px rgba($black, 0.3);
+  border-radius: 1.6rem;
+  margin: 2rem;
+  padding: 2rem;
+
+  img {
+    margin-bottom: 1rem;
+  }
+}
+
+.BookCardContent {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.BookCardFooter {
+ width: 100%;
 }
 
 .BookGenres {
@@ -14,11 +38,13 @@
 }
 
 .BookGenre {
-  background-color: red;
-  color: white;
+  background-color: #f8f6fe;
+  color: #999;
   border-radius: 4px;
   padding: 0.5rem 1rem;
   margin: 0 0.5rem 0.5rem 0;
+  font-size: $font-size-sm;
+  font-family: $font-family-semibold;
 }
 
 .BookThumb {
@@ -33,4 +59,7 @@
 
 .BookBtn {
   margin-top: 0.5rem;
+}
+.BookAuthor {
+  font-family: $font-family-semibold;
 }

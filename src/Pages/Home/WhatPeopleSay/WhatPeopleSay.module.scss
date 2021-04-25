@@ -7,10 +7,10 @@
 
 .CommentsWrap {
     display: flex;
+    justify-content: center;
 
     @media screen and (max-width: 1240px){
         flex-wrap: wrap;
-        justify-content: center;
     }
 
     .Comment {
@@ -20,10 +20,10 @@
         width: 33.333%;
 
         @media screen and (max-width: 1240px){
-            width: 50%;
+            width: 100%;
+            max-width: 60rem;
             margin-bottom: 2rem;
         }
-
 
         @media screen and (min-width: 1240px) {
             &:not(:last-of-type) {

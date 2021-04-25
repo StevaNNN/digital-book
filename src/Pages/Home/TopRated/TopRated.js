@@ -14,7 +14,7 @@ const topRated = props => {
         <section className={`db-section ${ classes.TopRated }`}>
             <div className={'db-section-wrapper'}>
                 <div className={'db-section-header'}>
-                    <h1>Top rated books</h1>
+                    <h1 className={'db-section-title'}>Top rated books</h1>
                     <Button onClick={goToTopRatedPage}>More</Button>
                 </div>
                 <SliderAbstract

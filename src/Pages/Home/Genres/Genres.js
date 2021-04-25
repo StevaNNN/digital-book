@@ -16,7 +16,7 @@ const genres = props => {
         <section className={`db-section`}>
             <div className={'db-section-wrapper'}>
                 <div className={'db-section-header'}>
-                    <h1>Genres</h1>
+                    <h1 className={'db-section-title'}>Genres</h1>
                 </div>
                 <div className={`db-card-wrapper`}>
                     {ALL_GENRES.map((item, index) => {
