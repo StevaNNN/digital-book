@@ -7,7 +7,8 @@ class AbstractPage extends Component {
 
     state = {
         term: '',
-        books: []
+        books: [],
+        textBySearchedTerm: ''
     }
 
     componentDidMount() {
@@ -16,17 +17,20 @@ class AbstractPage extends Component {
             if(this.props.genre) {
                 this.setState({
                     term: param[1],
-                    books: genrePicker(param[1])
+                    books: genrePicker(param[1]),
+                    textBySearchedTerm: param[1]
                 })
             } else if (this.props.lang) {
                 this.setState({
                     term: param[1],
-                    books: langPicker(param[1])
+                    books: langPicker(param[1]),
+                    textBySearchedTerm: param[1]
                 })
             } else  {
                 this.setState({
                     term: param[1],
-                    books: collectByTerm(param[1])
+                    books: collectByTerm(param[1]),
+                    textBySearchedTerm: param[1]
                 })
             }
         }
@@ -39,7 +43,8 @@ class AbstractPage extends Component {
     render() {
 
         const {
-            books
+            books,
+            textBySearchedTerm
         } = this.state;
 
         let booksRender = books.length > 0 ? books.map((book, index) => {
@@ -61,7 +66,12 @@ class AbstractPage extends Component {
 
         return (
             <section className={`db-section ${classes.BooksOnPage}`}>
-                {booksRender}
+                <div className={`db-section-header db-header-centered`}>
+                    <h1 className={`db-section-title`}>Books by searched term : <i className={'db-text-color'}>"{textBySearchedTerm}"</i></h1>
+                </div>
+                <div className={`db-section-content`}>
+                    {booksRender}
+                </div>
             </section>
         );
     }
