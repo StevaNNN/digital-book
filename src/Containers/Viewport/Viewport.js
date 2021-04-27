@@ -123,7 +123,7 @@ class Viewport extends React.Component {
                     backDropClicked={this.toggleBackdrop}
                     onCloseSideBarClick={this.toggleBackdrop}
                 />
-                <main>
+                <main style={{marginTop: '80px'}}>
                     <Switch>
                         <Route
                             path={'/top-rated'}

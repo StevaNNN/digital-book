@@ -2,10 +2,9 @@
     height: 8rem;
     padding: 2rem;
     width: 100%;
-    //background-color: #f8f6fe;
-    background-color: rgba(white, .7);
+    background-color: rgba(#f8f6fe, .9);
     z-index: 100;
-    position: sticky;
+    position: fixed;
     top: 0;
     display: flex;
     justify-content: space-between;
