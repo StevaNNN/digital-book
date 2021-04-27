@@ -41,11 +41,27 @@ class AbstractPage extends Component {
     onBookClick = (book) => this.props.selectedBook(book);
 
     render() {
-
         const {
             books,
             textBySearchedTerm
         } = this.state;
+
+        let booksBy;
+
+        // if (this.props.match.url === "/genre") {
+        //     booksBy = `Books by ${this.prop}`
+        // }
+        switch (this.props.match.url) {
+            case "/genre":
+                booksBy = <h1 className={`db-section-title`}>Books by <i className={'db-text-color'}>"{textBySearchedTerm}"</i> genre</h1>
+                break;
+            case "/language":
+                 booksBy = <h1 className={`db-section-title`}>Books by <i className={'db-text-color'}>"{textBySearchedTerm}"</i> language</h1>;
+                break;
+            default:
+                booksBy = <h1 className={`db-section-title`}>Books by searched term : <i className={'db-text-color'}>"{textBySearchedTerm}"</i></h1>
+                break;
+        }
 
         let booksRender = books.length > 0 ? books.map((book, index) => {
             return(
@@ -67,7 +83,7 @@ class AbstractPage extends Component {
         return (
             <section className={`db-section ${classes.BooksOnPage}`}>
                 <div className={`db-section-header db-header-centered`}>
-                    <h1 className={`db-section-title`}>Books by searched term : <i className={'db-text-color'}>"{textBySearchedTerm}"</i></h1>
+                    {booksBy}
                 </div>
                 <div className={`db-section-content`}>
                     {booksRender}
