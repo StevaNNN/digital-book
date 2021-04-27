@@ -31,10 +31,6 @@
   @media (max-height: 640px) {
     min-height: calc(100% - 4rem);
   }
-  
-  @media (max-height: 440px) {
-    min-height: unset;
-  }
 }
 
 .header {
