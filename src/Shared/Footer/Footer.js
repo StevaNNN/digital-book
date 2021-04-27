@@ -10,7 +10,7 @@ const footer = props => {
        <>
            <footer className={`db-section ${classes.Footer}`}>
                <div className={classes.Wrapper}>
-                   <div className={classes.FooterGroup}>
+                   <div className={`${classes.FooterGroup} ${classes.FooterLogo}`}>
                        <Logo/>
                    </div>
                    <div className={classes.FooterGroup}>

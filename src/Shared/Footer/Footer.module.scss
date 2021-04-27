@@ -2,8 +2,11 @@
 @import '../../Theme/sass/abstract/functions';
 
 .Footer {
-    min-height: 40rem;
     background-color: #f8f6fe;
+    
+    @media (min-width: 650px) {
+        min-height: 40rem;
+    }
 
     .#{$prefix}section-wrapper {
         justify-content: flex-start;
@@ -12,13 +15,25 @@
     ul {
         flex-direction: column;
         height: auto;
+        margin-right: 0;
+        width: 100%;
+    
+        li {
+            @media (max-width: 650px) {
+                text-align: center;
+            }
+        }
     }
 
     .Wrapper {
         display: flex;
-        flex-wrap: wrap;
         max-width: 120rem;
         width: 100%;
+        
+        @media (max-width: 650px) {
+            flex-direction: column;
+            align-items: center;
+        }
     }
 
     .FooterGroup {
@@ -26,15 +41,35 @@
         display: flex;
         align-items: flex-end;
         flex-direction: column;
+        
+        @media (max-width: 650px) {
+            margin-bottom: 5rem;
+            align-items: center;
+            width: 100%
+        }
 
         a {
             height: auto;
         }
 
         .heading {
-            padding-right: 1rem;
+            width: 100%;
+            text-align: center;
+            
+            @media (min-width: 650px) {
+                text-align: right;
+                padding-right: 1rem;
+            }
+        }
+        
+        &.FooterLogo {
+            a {
+                margin-left: 0 !important;
+            }
         }
     }
+    
+    
 
     .Button {
         background-color: transparent;
