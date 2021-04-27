@@ -1,52 +1,76 @@
 @import "../../Theme/sass/abstract/variables";
 
-.BookWrapper {
-  display: flex;
-
-  > div {
+.bookTop {
     display: flex;
-    flex-direction: column;
-
-    > div {
-      margin-bottom: 1rem;
+    flex: 1;
+    
+    @media (max-width: 700px) {
+        flex-wrap: wrap;
     }
-
-    &:last-of-type {
-      margin-left: 1rem;
+    
+    > div:first-of-type {
+        width: 100%;
+        
+        @media (min-width: 701px) {
+          margin-right: 2rem;
+        }
+      
+        @media (max-width: 700px) {
+          margin-bottom: 2rem;
+        }
     }
-  }
+    
+    h3 {
+        font-size: 2rem;
+    }
+    
+    h4 {
+        font-style: italic;
+    }
+    
+    p {
+        max-width: 100%;
+    }
+}
 
-  h3 {
-    font-size: 2rem;
-  }
+.bookWrapper {
+    display: flex;
+    justify-content: center;
+    
+    img {
+        max-width: 100%;
+        margin-bottom: 2rem;
+        border-radius: 8px;
+        overflow: hidden;
+        min-width: 23rem;
+        min-height: 26rem;
+        width: 23rem;
+        height: 26rem;
+        box-shadow: 0 0 3px #ccc;
+    }
+    
+    @media (max-width: 700px) {
+        width: 100%;
+    }
+}
 
-  h4 {
-    font-style: italic;
-  }
-
-  a {
-    padding: 1rem 2rem;
-  }
-
-  p {
-    max-width: 100%;
-  }
-
-  img {
-    max-width: 100%;
-    margin-bottom: 2rem;
-    border-radius: 8px;
-    overflow: hidden;
-    min-width: 23rem;
-    min-height: 26rem;
-    width: 23rem;
-    height: 26rem;
+.bookBottom {
+    width: 100%;
+    padding: 2rem;
+    background-color: $white;
     position: sticky;
-    top: 0;
-  }
-
-  button {
-    position: sticky;
-    top: 28rem;
-  }
+    bottom: 0;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    
+    button {
+        min-width: 50%;
+        max-width: 50%;
+        
+        @media (max-width: 700px) {
+            min-width: 100%;
+            max-width: 100%;
+        }
+    }
 }

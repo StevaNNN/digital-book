@@ -18,15 +18,23 @@
 }
 
 .dialog {
-  min-width: $db-dialog-width;
-  min-height: $db-dialog-height;
   max-width: $db-dialog-width;
-  max-height: $db-dialog-height;
+  max-height: calc(50% - 4rem);
+  min-height: $db-dialog-height;
+  width: calc(100% - 4rem);
   border-radius: $border-radius;
   background-color: $db-dialog-bg-color;
   box-shadow: $db-dialog-box-shadow;
   display: flex;
   flex-direction: column;
+  
+  @media (max-height: 640px) {
+    min-height: calc(100% - 4rem);
+  }
+  
+  @media (max-height: 440px) {
+    min-height: unset;
+  }
 }
 
 .header {
@@ -47,7 +55,7 @@
   flex: 1;
   display: flex;
   flex-direction: column;
-  padding: $db-dialog-padding-v $db-dialog-padding-h;
+  padding: $db-dialog-padding-v $db-dialog-padding-h 0;
   overflow-y: auto;
   overflow-x: hidden;
 }

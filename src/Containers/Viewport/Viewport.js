@@ -1,5 +1,5 @@
 import React from "react";
-import {Route, Switch} from "react-router-dom";
+import {Route, Switch, withRouter} from "react-router-dom";
 import {genrePicker, langPicker, ALL_GENRES, ALl_LANGUAGES} from "../../Util";
 import Header from '../../Components/Navigation/Header/Header';
 import SideDrawer from '../../Components/Navigation/SideDrawer/SideDrawer';
@@ -94,6 +94,12 @@ class Viewport extends React.Component {
             selectedBook: trendingBooks[index],
             modalOpened: true
         })
+    }
+    // closing dialog on on hardware back button on mobile devices
+    componentDidUpdate(prevProps, prevState, snapshot) {
+        if(prevProps !== this.props) {
+            this.closeModal();
+        }
     }
 
     render() {
@@ -247,4 +253,4 @@ class Viewport extends React.Component {
     }
 }
 
-export default Viewport;
+export default withRouter(Viewport);

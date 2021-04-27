@@ -21,23 +21,27 @@ const bookInDialog = (props) => {
     }
 
     return (
-        <div className={classes.BookWrapper}>
-            <div>
+        <>
+            <div className={classes.bookTop}>
                 <div>
-                    <span className={`db-text-color db-font-semibold`}>Title:</span>
-                    <h3 className={`db-text-color-dark`}>{title}</h3>
+                    <div>
+                        <span className={`db-text-color db-font-semibold`}>Title:</span>
+                        <h3 className={`db-text-color-dark`}>{title}</h3>
+                    </div>
+                    <div>
+                        <span className={`db-text-color db-font-semibold`}>Author:</span>
+                        <h4 className={`db-text-color-dark`}>{author}</h4>
+                    </div>
+                    <div>
+                        <span className={`db-text-color db-font-semibold`}>Description:</span>
+                        <p className={`db-text-color-dark`}>{description}</p>
+                    </div>
                 </div>
-                <div>
-                    <span className={`db-text-color db-font-semibold`}>Author:</span>
-                    <h4 className={`db-text-color-dark`}>{author}</h4>
-                </div>
-                <div>
-                    <span className={`db-text-color db-font-semibold`}>Description:</span>
-                    <p className={`db-text-color-dark`}>{description}</p>
+                <div className={classes.bookWrapper}>
+                    <img src={thumbnail} alt={title}/>
                 </div>
             </div>
-            <div>
-                <img src={thumbnail} alt={title}/>
+            <div className={classes.bookBottom}>
                 <Button
                     large
                     primary
@@ -46,7 +50,7 @@ const bookInDialog = (props) => {
                     Buy
                 </Button>
             </div>
-        </div>
+        </>
     );
 };
 
