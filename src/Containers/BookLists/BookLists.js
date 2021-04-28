@@ -22,6 +22,12 @@ class DynamicPage extends Component{
                 arrayOfBooks: this.props.books
             })
         }
+        let trt = document.querySelectorAll('.db-section');
+        trt.forEach((kec) => {
+            setTimeout(() => {
+                kec.classList.add('visible');
+            }, 300)
+        })
     }
     // Collecting selected book and pass it the to parent
     onBookSubmit = (book) => this.props.selectedBook(book);

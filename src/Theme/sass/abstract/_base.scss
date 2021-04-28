@@ -6,6 +6,30 @@
 
 html {
     font-size: 62.5%;
+    scroll-behavior: smooth;
+
+    &.no-scroll {
+        @media (min-width: 768px) {
+            margin-right: 1rem;
+        }
+    }
+}
+
+header {
+
+
+    .no-scroll & {
+
+        @media (min-width: 768px) {
+            left: -1rem;
+            padding-left: 3rem;
+        }
+
+    }
+}
+
+#root {
+    overflow-x: hidden;
 }
 
 body {
@@ -16,6 +40,10 @@ body {
     font-size: $font-size;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+
+    .no-scroll & {
+        overflow: hidden;
+    }
 }
 
 h1,

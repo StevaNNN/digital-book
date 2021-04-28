@@ -1,14 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom'
-
-import App from './App';
-import ScrollToTop from "./Hoc/ScrollToTop";
+import Viewport from "./Containers/Viewport/Viewport";
+import './Theme/main.scss';
 
 ReactDOM.render(
   <BrowserRouter>
-      <ScrollToTop/>
-      <App />
+      <Viewport />
   </BrowserRouter>,
   document.getElementById('root')
 );
